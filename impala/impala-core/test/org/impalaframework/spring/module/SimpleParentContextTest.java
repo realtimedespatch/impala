@@ -46,6 +46,8 @@ public class SimpleParentContextTest extends TestCase {
         // show that we've overridden the child
         Parent gotParent = childBean.tryGetParent();
         assertSame(parentBean, gotParent);
+        
+        child.close();
     }
 
 }

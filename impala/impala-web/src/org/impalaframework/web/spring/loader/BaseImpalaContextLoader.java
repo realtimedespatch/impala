@@ -107,7 +107,8 @@ public abstract class BaseImpalaContextLoader extends ContextLoader implements S
         	//use the configure method to do configuration on the web application context
         	if (newContext instanceof ConfigurableWebApplicationContext) {
         		
-	        	ConfigurableWebApplicationContext wac = (ConfigurableWebApplicationContext) newContext;
+	        	@SuppressWarnings("resource")
+				ConfigurableWebApplicationContext wac = (ConfigurableWebApplicationContext) newContext;
 		    	if (configurableMethod != null) {
 		    		
 		    		ReflectionUtils.invokeMethod(configurableMethod, this, new Object[]{
@@ -250,12 +251,14 @@ public abstract class BaseImpalaContextLoader extends ContextLoader implements S
     /**
      * Instantiates Impala in the form of a <code>ModuleManagementFacade</code> instance.
      */
-    protected ModuleManagementFacade createModuleManagementFacade(ServletContext servletContext, WebApplicationContext parent) {
+	protected ModuleManagementFacade createModuleManagementFacade(ServletContext servletContext, WebApplicationContext parent) {
         
         String[] locations = getBootstrapContextLocations(servletContext);
         logger.info("Loading bootstrap context from locations " + Arrays.toString(locations));
 
         final DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+
+        @SuppressWarnings("resource")
         final GenericWebApplicationContext applicationContext = new GenericWebApplicationContext(beanFactory);
         applicationContext.setServletContext(servletContext);
         applicationContext.setParent(parent);

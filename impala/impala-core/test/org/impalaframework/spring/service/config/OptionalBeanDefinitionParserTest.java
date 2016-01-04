@@ -27,6 +27,8 @@ public class OptionalBeanDefinitionParserTest extends TestCase {
         
         String fallback = (String)context.getBean("optionalFallback");
         assertEquals("fallback", fallback);
+        
+        context.close();
     }
     
 }

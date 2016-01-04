@@ -57,7 +57,8 @@ public abstract class BaseExistingBeanExposingFactoryBean implements Initializin
             
             if (currentContext instanceof ConfigurableApplicationContext) {
             
-                ConfigurableApplicationContext configurableContext = (ConfigurableApplicationContext) currentContext;
+                @SuppressWarnings("resource")
+				ConfigurableApplicationContext configurableContext = (ConfigurableApplicationContext) currentContext;
                 return configurableContext.getBeanFactory();
             
             } else {

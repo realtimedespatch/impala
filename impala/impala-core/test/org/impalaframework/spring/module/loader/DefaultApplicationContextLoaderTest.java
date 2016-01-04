@@ -87,6 +87,8 @@ public class DefaultApplicationContextLoaderTest extends TestCase {
         ApplicationManager applicationManager = facade.getApplicationManager();
         application = applicationManager.getCurrentApplication();
         moduleStateHolder = (DefaultModuleStateHolder) application.getModuleStateHolder();
+        
+        appContext.close();
     }
 
     public void testResourceBasedValue() {

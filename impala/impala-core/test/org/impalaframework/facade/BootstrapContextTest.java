@@ -42,10 +42,9 @@ public class BootstrapContextTest extends TestCase {
     private static final String plugin2 = "sample-module2";
 
     public void testBootstrapContext() throws Exception {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                new String[]{"META-INF/impala-bootstrap.xml"});
-        ModificationExtractorRegistry calculatorRegistry = (ModificationExtractorRegistry) context
-                .getBean("modificationExtractorRegistry");
+    	
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"META-INF/impala-bootstrap.xml"});
+        ModificationExtractorRegistry calculatorRegistry = (ModificationExtractorRegistry) context.getBean("modificationExtractorRegistry");
         ModuleLoaderRegistry registry = (ModuleLoaderRegistry) context.getBean("moduleLoaderRegistry");
         
         assertNotNull(registry.getModuleLoader("spring-"+ModuleTypes.ROOT));
@@ -64,6 +63,8 @@ public class BootstrapContextTest extends TestCase {
         ConfigurableApplicationContext parentContext = SpringModuleUtils.getRootSpringContext(moduleStateHolder);
         FileMonitor bean = (FileMonitor) parentContext.getBean("bean1");
         bean.lastModified((File) null);
+        
+        context.close();
     }
 
     class Provider implements ModuleDefinitionSource {

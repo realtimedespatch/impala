@@ -14,8 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public class PathMatchingFilter implements Filter {
 
-    private static final long serialVersionUID = 1L;
-
     public void init(FilterConfig filterConfig) throws ServletException {
     }
     public void destroy() {

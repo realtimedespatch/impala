@@ -117,7 +117,9 @@ public abstract class CustomClassLoader extends BaseURLClassLoader implements Mo
     public boolean hasVisibilityOf(ClassLoader classLoader) {
         
         final ClassLoader parent = classLoader;
-        ClassLoader child = this;
+        
+        @SuppressWarnings("resource")
+		ClassLoader child = this;
         
         if (parent == child) return true;
         

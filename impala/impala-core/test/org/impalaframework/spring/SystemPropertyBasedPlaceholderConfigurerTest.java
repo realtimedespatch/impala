@@ -34,11 +34,15 @@ public class SystemPropertyBasedPlaceholderConfigurerTest extends TestCase {
         assertEquals("bean30_value", context.getBean("bean30"));
         assertEquals("bean40_value_modified", context.getBean("bean40"));
         assertEquals("bean50_value", context.getBean("bean50"));
+        
+        context.close();
     }
     
     public void testPlaceholder() {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("placeholder/spring-context.xml");
         assertEquals("Phil", context.getBean("bean2"));
+        
+        context.close();
     }
 
 }

@@ -265,6 +265,15 @@ public class GetTask extends Task {
         }
         catch (IOException e) {
             throw new BuildException("Could not read file " + dependencies.getAbsolutePath(), getLocation());
+        } finally {
+        	
+        	if (reader != null) {
+        		try {
+					reader.close();
+				} catch (IOException e) {
+				}
+        	}
+        	
         }
         return fileList;
     }

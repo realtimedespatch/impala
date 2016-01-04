@@ -30,6 +30,8 @@ public class ConstantValuePlaceholderConfigurerTest extends TestCase {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:org/impalaframework/spring/constantvalue.xml");
         assertEquals("module.class.dir", applicationContext.getBean("string1"));        
         assertEquals("stringval", applicationContext.getBean("string2"));
+        
+        applicationContext.close();
     }
     
     public void testResolver() {

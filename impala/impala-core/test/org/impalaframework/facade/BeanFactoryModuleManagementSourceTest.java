@@ -49,6 +49,8 @@ public class BeanFactoryModuleManagementSourceTest extends TestCase {
         
         Object managementFactory = facade.getBean("moduleManagementFacade", ModuleManagementFacade.class);
         assertNotNull(managementFactory);
+        
+        appContext.close();
     }
 
 }

@@ -27,7 +27,6 @@ import org.impalaframework.module.spi.ModuleStateHolder;
 import org.impalaframework.module.spi.TransitionManager;
 import org.impalaframework.module.spi.TransitionSet;
 import org.impalaframework.util.ObjectUtils;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class JMXBootstrapContextTest extends TestCase {
@@ -50,7 +49,7 @@ public class JMXBootstrapContextTest extends TestCase {
     }
 
     public void testBootstrapContext() throws Exception {
-        ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {
+    	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {
                 "META-INF/impala-bootstrap.xml",
                 "META-INF/impala-jmx-bootstrap.xml" ,
                 "META-INF/impala-jmx-adaptor-bootstrap.xml"});
@@ -73,6 +72,8 @@ public class JMXBootstrapContextTest extends TestCase {
 
         assertEquals("Could not find module duff", operations.reloadModule("duff"));
         assertEquals("Successfully reloaded sample-module1", operations.reloadModule(plugin1));
+
+        context.close();
     }
 
     class Provider implements ModuleDefinitionSource {

@@ -14,6 +14,8 @@
 
 package org.impalaframework.groovy;
 
+import java.io.IOException;
+
 import org.impalaframework.exception.ExecutionException;
 
 import groovy.lang.GroovyClassLoader;
@@ -33,6 +35,11 @@ public class GroovyParser {
 		}
 		catch (Exception e) {
 			throw new ExecutionException(e.getMessage(), e);
+		} finally {
+			try {
+				cl.close();
+			} catch (IOException e) {
+			}
 		}
 	}
 }
