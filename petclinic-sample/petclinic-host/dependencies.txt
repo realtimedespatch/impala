@@ -1,2 +1,0 @@
-jetty from jstl:jstl:1.1.2 source=false
-jetty from taglibs:standard:1.1.2 source=false

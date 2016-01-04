@@ -1,2 +1,0 @@
-web from jstl:jstl:1.1.2 source=false
-web from taglibs:standard:1.1.2 source=false

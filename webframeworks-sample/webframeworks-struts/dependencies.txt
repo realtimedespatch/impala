@@ -1,3 +1,0 @@
-compile from struts:struts:1.2.9
-runtime from commons-beanutils:commons-beanutils:1.7.0
-runtime from commons-digester:commons-digester:1.6

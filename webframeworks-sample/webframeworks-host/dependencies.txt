@@ -1,8 +1,0 @@
-compile from org.springframework:spring-webmvc:2.5.5
-compile from org.springframework:spring-webflow:1.0.5
-provided from javax.servlet:servlet-api:2.5
-provided from javax.servlet.jsp:jsp-api:2.1
-provided from org.mortbay.jetty:jetty:6.1.11
-provided from org.mortbay.jetty:jetty-util:6.1.11
-provided from xerces:xercesImpl:2.8.1
-

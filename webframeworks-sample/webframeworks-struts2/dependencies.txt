@@ -1,6 +1,0 @@
-compile from org.apache.struts:struts2-core:2.1.8
-runtime from org.apache.struts:struts2-spring-plugin:2.1.8
-runtime from com.opensymphony:xwork-core:2.1.6 
-runtime from ognl:ognl:2.7.3
-runtime from org.freemarker:freemarker:2.3.15 
-runtime from commons-fileupload:commons-fileupload:1.2.1

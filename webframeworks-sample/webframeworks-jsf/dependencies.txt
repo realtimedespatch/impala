@@ -1,3 +1,0 @@
-runtime from org.apache.myfaces.core:myfaces-api:1.2.5
-runtime from org.apache.myfaces.core:myfaces-impl:1.2.5
-runtime from com.sun.facelets:jsf-facelets:1.1.14
