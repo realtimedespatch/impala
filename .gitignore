@@ -66,3 +66,6 @@ webframeworks-sample/webframeworks-tapestry5/bin/
 webframeworks-sample/webframeworks-test/bin/
 webframeworks-sample/webframeworks-web/bin/
 webframeworks-sample/webframeworks-wicket/bin/
+impala/deploy/
+impala/impala-repository/dist/
+impala/impala/lib/
