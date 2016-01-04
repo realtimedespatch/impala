@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" output="testbin" path="test"/>
-	<classpathentry kind="src" path="resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/impala-core"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/jmx/mx4j-3.0.2.jar" sourcepath="/impala-repository/jmx/mx4j-3.0.2-sources.jar"/>
