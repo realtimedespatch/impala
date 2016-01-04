@@ -143,8 +143,8 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
  <bean id="classResourceFinders" class="org.springframework.beans.factory.config.ListFactoryBean">
     <property name="sourceList">  
         <list> 
-            <ref local = "expandedModuleClassResourceFinder"/>
-            <ref local = "jarModuleClassResourceFinder"/>
+            <ref bean = "expandedModuleClassResourceFinder"/>
+            <ref bean = "jarModuleClassResourceFinder"/>
         </list>  
     </property> 
  </bean>
@@ -152,7 +152,7 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
  <bean id="libraryResourceFinders" class="org.springframework.beans.factory.config.ListFactoryBean">
     <property name="sourceList">  
         <list> 
-            <ref local = "expandedModuleLibraryResourceFinder"/>
+            <ref bean = "expandedModuleLibraryResourceFinder"/>
         </list>  
     </property> 
  </bean>  

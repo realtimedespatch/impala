@@ -22,8 +22,8 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
  <bean id="requestModuleMapper" class="org.impalaframework.web.integration.CompositeRequestModuleMapper">
     <property name="requestModuleMappers">  
         <list> 
-            <ref local = "urlPrefixRequestModuleMapper"/>
-            <ref local = "servletPathRequestModuleMapper"/>
+            <ref bean = "urlPrefixRequestModuleMapper"/>
+            <ref bean = "servletPathRequestModuleMapper"/>
         </list>  
     </property> 
  </bean>

@@ -20,7 +20,7 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
  <bean id="testResourceFinders" class="org.springframework.beans.factory.config.ListFactoryBean">
     <property name="sourceList">  
         <list> 
-            <ref local = "testModuleResourceFinder"/>
+            <ref bean = "testModuleResourceFinder"/>
         </list>  
     </property> 
  </bean> 
