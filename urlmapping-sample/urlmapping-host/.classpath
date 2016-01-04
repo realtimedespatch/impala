@@ -4,19 +4,19 @@
 	<classpathentry kind="src" path="test"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/web/servlet-api-2.5.jar" sourcepath="/urlmapping-repository/web/servlet-api-2.5-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/web/jsp-api-2.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/aopalliance-1.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-aop-4.2.4.RELEASE.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-beans-4.2.4.RELEASE.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-context-4.2.4.RELEASE.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-context-support-4.2.4.RELEASE.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-core-4.2.4.RELEASE.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-expression-4.2.4.RELEASE.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-web-4.2.4.RELEASE.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-webmvc-4.2.4.RELEASE.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/commons-logging-1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-build-1.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-build-1.1-SNAPSHOT-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-command-1.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-command-1.1-SNAPSHOT-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/web/jsp-api-2.1.jar" sourcepath="/urlmapping-repository/web/jsp-api-2.1-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/aopalliance-1.0.jar" sourcepath="/urlmapping-repository/compile/aopalliance-1.0-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-aop-4.2.4.RELEASE.jar" sourcepath="/urlmapping-repository/compile/spring-aop-4.2.4.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-beans-4.2.4.RELEASE.jar" sourcepath="/urlmapping-repository/compile/spring-beans-4.2.4.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-context-4.2.4.RELEASE.jar" sourcepath="/urlmapping-repository/compile/spring-context-4.2.4.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-context-support-4.2.4.RELEASE.jar" sourcepath="/urlmapping-repository/compile/spring-context-support-4.2.4.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-core-4.2.4.RELEASE.jar" sourcepath="/urlmapping-repository/compile/spring-core-4.2.4.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-expression-4.2.4.RELEASE.jar" sourcepath="/urlmapping-repository/compile/spring-expression-4.2.4.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-web-4.2.4.RELEASE.jar" sourcepath="/urlmapping-repository/compile/spring-web-4.2.4.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-webmvc-4.2.4.RELEASE.jar" sourcepath="/urlmapping-repository/compile/spring-webmvc-4.2.4.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/commons-logging-1.2.jar" sourcepath="/urlmapping-repository/compile/commons-logging-1.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-build-1.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-build-1.1-SNAPSHOT-javadoc.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-command-1.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-command-1.1-SNAPSHOT-javadoc.jar"/>
 	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-core-1.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-core-1.1-SNAPSHOT-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-jmx-1.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-jmx-1.1-SNAPSHOT-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-interactive-1.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-interactive-1.1-SNAPSHOT-sources.jar"/>
@@ -28,10 +28,10 @@
 	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/jetty/jetty-util-6.1.14.jar" sourcepath="/urlmapping-repository/jetty/jetty-util-6.1.14-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/jetty/commons-el-1.0.jar" sourcepath="/urlmapping-repository/jetty/commons-el-1.0-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/jetty/xercesImpl-2.8.1.jar" sourcepath="/urlmapping-repository/compile/xercesImpl-2.8.1-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/web/freemarker-2.3.15.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/test/junit-3.8.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/cglib-nodep-2.1_3.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/test/easymock-2.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/test/easymockclassextension-2.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/web/freemarker-2.3.15.jar" sourcepath="/urlmapping-repository/web/freemarker-2.3.15-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/test/junit-3.8.1.jar" sourcepath="/urlmapping-repository/test/junit-3.8.1-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/cglib-nodep-2.1_3.jar" sourcepath="/urlmapping-repository/compile/cglib-nodep-2.1_3-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/test/easymock-2.2.jar" sourcepath="/urlmapping-repository/test/easymock-2.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/test/easymockclassextension-2.2.jar" sourcepath="/urlmapping-repository/test/easymockclassextension-2.2-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
