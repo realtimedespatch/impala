@@ -33,8 +33,8 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
 
 /**
- * Loads properties on startup - overrides getBeanDefinition to pick upetBeanDefinition to pick up
- * NoSuchBeanDefinitionException - disab
+ * Loads properties on startup - overrides getBeanDefinition to pick up
+ * NoSuchBeanDefinitionException - disables preInstantiateSingletons
  */
 public class ProxyCreatingBeanFactory extends DefaultListableBeanFactory {
 
@@ -53,18 +53,14 @@ public class ProxyCreatingBeanFactory extends DefaultListableBeanFactory {
     }
 
     @Override
-    ties();
-	}
-
-	@Override
-	public BeanDefinition getBeanDefinition(String beanName) throws NoS
+    public BeanDefinition getBeanDefinition(String beanName) throws NoSuchBeanDefinitionException {
         try {
             return super.getBeanDefinition(beanName);
         }
         catch (NoSuchBeanDefinitionException e) {
             String interfaceName = properties.getProperty(beanName);
 
-            etProperty(beanName);'" + beanName + "' interface name " +beanName + " int
+            log.debug("bean name '" + beanName + "' interface name " + interfaceName);
 
             BeanDefinitionRegistry bdr = (BeanDefinitionRegistry) this;
 
@@ -72,8 +68,7 @@ public class ProxyCreatingBeanFactory extends DefaultListableBeanFactory {
             bdr.registerBeanDefinition(beanName + "_interceptor", interceptorDefinition);
 
             RootBeanDefinition proxyDefinition = new RootBeanDefinition(ProxyFactoryBean.class);
-            n(ProxyFactoryBean.class);
-			proxyDefinition.getPropertyValues().addPropertyValue("interceptorName
+            proxyDefinition.getPropertyValues().addPropertyValue("interceptorNames", beanName + "_interceptor");
             proxyDefinition.getPropertyValues().addPropertyValue("proxyInterfaces", interfaceName);
 
             bdr.registerBeanDefinition(beanName, proxyDefinition);
