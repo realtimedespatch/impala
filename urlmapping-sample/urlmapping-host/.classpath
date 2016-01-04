@@ -2,19 +2,25 @@
 <classpath>
 	<classpathentry kind="src" path="resources"/>
 	<classpathentry kind="src" path="test"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-web-1.0.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-web-1.0.1-SNAPSHOT-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/web/spring-webmvc-2.5.5.jar" sourcepath="/urlmapping-repository/web/spring-webmvc-2.5.5-sources.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/web/servlet-api-2.5.jar" sourcepath="/urlmapping-repository/web/servlet-api-2.5-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-build-1.0.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-build-1.0.1-SNAPSHOT-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-command-1.0.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-command-1.0.1-SNAPSHOT-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-core-1.0.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-core-1.0.1-SNAPSHOT-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-jmx-1.0.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-jmx-1.0.1-SNAPSHOT-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-interactive-1.0.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-interactive-1.0.1-SNAPSHOT-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/commons-logging-1.1.jar" sourcepath="/urlmapping-repository/test/commons-logging-1.1-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/log4j-1.2.13.jar" sourcepath="/urlmapping-repository/compile/log4j-1.2.13.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-2.5.5.jar" sourcepath="/urlmapping-repository/compile/spring-2.5.5-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/web/jsp-api-2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/aopalliance-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-aop-4.2.4.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-beans-4.2.4.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-context-4.2.4.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-context-support-4.2.4.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-core-4.2.4.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-expression-4.2.4.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-web-4.2.4.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/spring-webmvc-4.2.4.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/commons-logging-1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-build-1.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-build-1.1-SNAPSHOT-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-command-1.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-command-1.1-SNAPSHOT-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-core-1.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-core-1.1-SNAPSHOT-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-jmx-1.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-jmx-1.1-SNAPSHOT-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-interactive-1.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-interactive-1.1-SNAPSHOT-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/impala-web-1.1-SNAPSHOT.jar" sourcepath="/urlmapping-repository/compile/impala-web-1.1-SNAPSHOT-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/jetty/jasper-compiler-5.5.15.jar"/>
 	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/jetty/jasper-compiler-jdt-5.5.15.jar"/>
 	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/jetty/jasper-runtime-5.5.15.jar"/>
@@ -23,9 +29,9 @@
 	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/jetty/commons-el-1.0.jar" sourcepath="/urlmapping-repository/jetty/commons-el-1.0-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/jetty/xercesImpl-2.8.1.jar" sourcepath="/urlmapping-repository/compile/xercesImpl-2.8.1-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/web/freemarker-2.3.15.jar"/>
+	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/test/junit-3.8.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/compile/cglib-nodep-2.1_3.jar"/>
 	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/test/easymock-2.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/test/easymockclassextension-2.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/urlmapping-repository/test/junit-3.8.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
