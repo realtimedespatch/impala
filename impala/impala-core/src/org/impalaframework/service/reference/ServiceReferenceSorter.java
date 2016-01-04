@@ -65,8 +65,14 @@ public class ServiceReferenceSorter {
         public int compare(ServiceRegistryEntry o1, ServiceRegistryEntry o2) {
             int o2ranking = getServiceRanking(o2);
             int o1ranking = getServiceRanking(o1);
-            if (o2ranking > o1ranking) return 1;
-            if (o1ranking < o2ranking) return -1;
+            
+            if (o2ranking > o1ranking) {
+            	return 1;
+            }
+            if (o2ranking < o1ranking) {
+            	return -1;
+            }
+            
             return 0;
         }
 

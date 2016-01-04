@@ -104,7 +104,7 @@ public class DependencyManagerErrorTest extends TestCase {
         try {
             manager.addModule("root", new SimpleModuleDefinition(null, "newmodule2", ModuleTypes.APPLICATION, null, new String[] {"duffModule"}, null, null, null, null, true));
         } catch (InvalidStateException e) {
-            assertEquals("Unable to dependency named named 'duffModule' for module definition 'newmodule2'", e.getMessage());
+            assertEquals("Unable to find entry for dependency named named 'duffModule' for module definition 'newmodule2'.", e.getMessage());
         }
     }
     
