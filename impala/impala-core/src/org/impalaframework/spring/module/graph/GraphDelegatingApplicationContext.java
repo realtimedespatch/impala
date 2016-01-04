@@ -25,6 +25,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.impalaframework.spring.bean.factory.BeanFactoryUtils;
 import org.impalaframework.spring.service.BeanDefinitionExposing;
+import org.impalaframework.util.ReflectionUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
@@ -313,6 +314,10 @@ public class GraphDelegatingApplicationContext implements ApplicationContext, Be
 
     public void publishEvent(ApplicationEvent event) {
         parent.publishEvent(event);
+    }
+
+    public void publishEvent(Object event) {
+        ReflectionUtils.invokeMethod(parent, "publishEvent", event);
     }
 
     public Resource[] getResources(String locationPattern) throws IOException {
