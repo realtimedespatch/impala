@@ -1,0 +1,14 @@
+.metadata/
+RemoteSystemsTempFiles/
+impala/impala-build/bin/
+impala/impala-core/bin/
+impala/impala-core/testbin/
+impala/impala-launcher/bin/
+impala/impala-launcher/testbin/
+impala/impala-sandbox/bin/
+impala/impala-sandbox/testbin/
+impala/impala-web/bin/
+impala/impala-web/testbin/
+webframeworks-sample/webframeworks-host/bin/
+webframeworks-sample/webframeworks-main/bin/
+webframeworks-sample/webframeworks-service/bin/
