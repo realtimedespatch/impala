@@ -44,12 +44,14 @@ public class DownloadTaskManualTest extends BaseDownloadTaskTest {
     
     public void testMoreDependencies() {
         task.setDownloadSources(true);
-        task.setBaseSourceUrls("http://repository.jboss.com/maven2/,http://ibiblio.org/pub/packages/maven2/");
+        task.setBaseSourceUrls("http://repo1.maven.org/maven2/,http://repository.jboss.com/maven2/,http://ibiblio.org/pub/packages/maven2/");
         task.setDependencies(new File("resources/more-dependencies.txt"));
         task.execute();
         File[] listFiles = downloadDir.listFiles();
         System.out.println(Arrays.toString(listFiles));
-        assertEquals(4, listFiles.length);
+        
+        System.out.println(downloadDir.getAbsolutePath());
+        assertEquals(6, listFiles.length);
     }
     
     public void testExecuteWithMultipeRepos() throws MalformedURLException {
