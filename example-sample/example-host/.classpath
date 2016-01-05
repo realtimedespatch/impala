@@ -4,56 +4,57 @@
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="src" path="resources"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/impala-core"/>
-	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/impala-interactive"/>
-	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/impala-jmx"/>
-	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/impala-web"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/build/ant-1.7.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/main/antlr-2.7.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/antlr-2.7.7.jar"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/test/dbunit-2.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/build/ant-apache-bsf-1.7.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/build/ant-junit-1.7.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/build/ant-launcher-1.7.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/main/cglib-nodep-2.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-aop-3.2.0.RELEASE.jar" sourcepath="/example-repository/main/spring-aop-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-expression-3.2.0.RELEASE.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-beans-3.2.0.RELEASE.jar" sourcepath="/example-repository/main/spring-beans-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-context-3.2.0.RELEASE.jar" sourcepath="/example-repository/main/spring-context-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-context-support-3.2.0.RELEASE.jar" sourcepath="/example-repository/main/spring-context-support-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-core-3.2.0.RELEASE.jar" sourcepath="/example-repository/main/spring-core-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-web-3.2.0.RELEASE.jar" sourcepath="/example-repository/main/spring-web-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-jdbc-3.2.0.RELEASE.jar" sourcepath="/example-repository/main/spring-jdbc-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-orm-3.2.0.RELEASE.jar" sourcepath="/example-repository/main/spring-orm-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-tx-3.2.0.RELEASE.jar" sourcepath="/example-repository/main/spring-tx-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/main/commons-collections-2.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-aop-4.2.4.RELEASE.jar" sourcepath="/example-repository/main/spring-aop-4.2.4.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-expression-4.2.4.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-beans-4.2.4.RELEASE.jar" sourcepath="/example-repository/main/spring-beans-4.2.4.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-context-4.2.4.RELEASE.jar" sourcepath="/example-repository/main/spring-context-4.2.4.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-context-support-4.2.4.RELEASE.jar" sourcepath="/example-repository/main/spring-context-support-4.2.4.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-core-4.2.4.RELEASE.jar" sourcepath="/example-repository/main/spring-core-4.2.4.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-web-4.2.4.RELEASE.jar" sourcepath="/example-repository/main/spring-web-4.2.4.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-jdbc-4.2.4.RELEASE.jar" sourcepath="/example-repository/main/spring-jdbc-4.2.4.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-orm-4.2.4.RELEASE.jar" sourcepath="/example-repository/main/spring-orm-4.2.4.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/spring-tx-4.2.4.RELEASE.jar" sourcepath="/example-repository/main/spring-tx-4.2.4.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/commons-collections-3.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/main/commons-io-1.4.jar"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/main/dom4j-1.6.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/main/ehcache-1.3.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/main/hibernate-3.2.3.ga.jar" sourcepath="/example-repository/main/hibernate-3.2.3.ga-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/main/hibernate-3.2.3.ga-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/main/hsqldb-1.8.0.7.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/main/log4j-1.2.14.jar" sourcepath="/example-repository/main/log4j-1.2.14-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/log4j-1.2.17.jar" sourcepath="/example-repository/main/log4j-1.2.17-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/test/easymock-2.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/test/easymockclassextension-2.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/test/junit-3.8.1.jar" sourcepath="/example-repository/test/junit-3.8.1-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/jetty/commons-el-1.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/jetty/jasper-compiler-5.5.15.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/jetty/jasper-compiler-jdt-5.5.15.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/jetty/jasper-runtime-5.5.15.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/jetty/jetty-6.1.11.jar" sourcepath="/example-repository/jetty/jetty-6.1.11-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/jetty/jetty-util-6.1.11.jar" sourcepath="/example-repository/jetty/jetty-util-6.1.11-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/jetty/xercesImpl-2.8.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/main/jta.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/main/slf4j-api-1.6.2.jar" sourcepath="/example-repository/main/slf4j-api-1.6.2-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/main/slf4j-log4j12-1.6.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/aspectj/aspectjrt-1.5.4.jar"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/aspectj/aspectjweaver-1.5.4.jar"/>
 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/example-extension"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/web/servlet-api-2.4.jar"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/web/jsp-api-2.0.jar"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/impala-launcher"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/hibernate-commons-annotations-3.2.0.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/hibernate-core-3.6.8.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/hibernate-entitymanager-3.6.8.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/commons-logging-1.1.1.jar" sourcepath="/example-repository/main/commons-logging-1.1.1-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/jetty/jasper-6.0.20.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/jetty/jasper-el-6.0.20.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/jetty/jasper-jdt-6.0.20.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/jetty/jetty-6.1.21.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/jetty/jetty-util-6.1.21.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/jetty/jsp-api-2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/jetty/servlet-api-2.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/jetty/xercesImpl-2.9.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/example-repository/main/javassist-3.17.1-GA.jar" sourcepath="/example-repository/main/javassist-3.17.1-GA-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/jetty/jstl-1.1.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="/example-repository/jetty/standard-1.1.2.jar"/>
-	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/impala-launcher"/>
-	<classpathentry exported="true" kind="lib" path="/example-repository/main/jcl-over-slf4j-1.6.2.jar"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/impala-core"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/impala-interactive"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/impala-jmx"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/impala-web"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

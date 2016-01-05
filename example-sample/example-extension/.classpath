@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/example-repository/web/servlet-api-2.4.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/impala-core"/>
+	<classpathentry kind="lib" path="/example-repository/jetty/servlet-api-2.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

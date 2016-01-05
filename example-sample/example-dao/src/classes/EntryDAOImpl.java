@@ -15,6 +15,7 @@
 package classes;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
@@ -28,7 +29,8 @@ public class EntryDAOImpl extends HibernateDaoSupport implements EntryDAO {
 
     @SuppressWarnings("unchecked")
     public Collection<Entry> getEntriesWithCount(int count) {
-        return getHibernateTemplate().find("from Entry entry where entry.count = ?", count);
+        List<?> result = getHibernateTemplate().find("from Entry entry where entry.count = ?", count);
+		return (Collection<Entry>) result;
     }
 
     public void update(Entry entry) {
