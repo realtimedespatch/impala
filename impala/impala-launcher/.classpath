@@ -4,8 +4,15 @@
 	<classpathentry kind="src" output="testbin" path="test"/>
 	<classpathentry kind="src" path="resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/impala-repository/test/junit-3.8.2.jar" sourcepath="/impala-repository/test/junit-3.8.2-sources.jar"/>
-	<classpathentry kind="lib" path="/impala-repository/jetty/jetty-6.1.21.jar" sourcepath="/impala-repository/jetty/jetty-6.1.21-sources.jar"/>
-	<classpathentry kind="lib" path="/impala-repository/jetty/jetty-util-6.1.21.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/test/junit-3.8.2.jar" sourcepath="/impala-repository/test/junit-3.8.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/javax.servlet-api-3.1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/jetty-http-9.4.14.v20181114.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/jetty-io-9.4.14.v20181114.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/jetty-security-9.4.14.v20181114.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/jetty-server-9.4.14.v20181114.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/jetty-servlet-9.4.14.v20181114.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/jetty-util-9.4.14.v20181114.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/jetty-webapp-9.4.14.v20181114.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/jetty-xml-9.4.14.v20181114.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

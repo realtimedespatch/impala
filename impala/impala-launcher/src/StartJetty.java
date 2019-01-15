@@ -14,16 +14,19 @@
 
 import java.io.File;
 
-import org.mortbay.jetty.Connector;
-import org.mortbay.jetty.Handler;
-import org.mortbay.jetty.Server;
-import org.mortbay.jetty.handler.ContextHandlerCollection;
-import org.mortbay.jetty.handler.DefaultHandler;
-import org.mortbay.jetty.handler.HandlerCollection;
-import org.mortbay.jetty.handler.RequestLogHandler;
-import org.mortbay.jetty.handler.ResourceHandler;
-import org.mortbay.jetty.nio.SelectChannelConnector;
-import org.mortbay.jetty.webapp.WebAppContext;
+import org.eclipse.jetty.server.Connector;
+import org.eclipse.jetty.server.Handler;
+import org.eclipse.jetty.server.HttpConfiguration;
+import org.eclipse.jetty.server.HttpConnectionFactory;
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.server.ServerConnector;
+import org.eclipse.jetty.server.handler.ContextHandlerCollection;
+import org.eclipse.jetty.server.handler.DefaultHandler;
+import org.eclipse.jetty.server.handler.HandlerCollection;
+import org.eclipse.jetty.server.handler.RequestLogHandler;
+import org.eclipse.jetty.server.handler.ResourceHandler;
+import org.eclipse.jetty.webapp.WebAppContext;
+
 
 /**
  * Main class which simplifies starting a Jetty server instance.
@@ -47,9 +50,14 @@ public class StartJetty {
             String resourceBase = RunJetty.args(args, 4, "html");
 
 			Server server = new Server();
+			
+			HttpConfiguration httpConfig = new HttpConfiguration();
+    		httpConfig.setSendServerVersion( false );
+    		HttpConnectionFactory httpFactory = new HttpConnectionFactory( httpConfig );
 
-			Connector connector = new SelectChannelConnector();
-			connector.setPort(port);
+    		ServerConnector connector = new ServerConnector( server,httpFactory );
+            connector.setPort(port);
+            
 			server.setConnectors(new Connector[] { connector });
 
 			HandlerCollection handlers = new HandlerCollection();
@@ -66,7 +74,6 @@ public class StartJetty {
 			server.setHandler(handlers);
 
 			server.setStopAtShutdown(true);
-			server.setSendServerVersion(true);
 
 			try {
 				server.start();

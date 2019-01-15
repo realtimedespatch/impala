@@ -13,26 +13,31 @@
  */
 
 import java.io.File;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
 
-import org.mortbay.jetty.Connector;
-import org.mortbay.jetty.Handler;
-import org.mortbay.jetty.Server;
-import org.mortbay.jetty.handler.ContextHandlerCollection;
-import org.mortbay.jetty.handler.DefaultHandler;
-import org.mortbay.jetty.handler.HandlerCollection;
-import org.mortbay.jetty.handler.RequestLogHandler;
-import org.mortbay.jetty.handler.ResourceHandler;
-import org.mortbay.jetty.nio.SelectChannelConnector;
-import org.mortbay.jetty.security.SslSocketConnector;
-import org.mortbay.jetty.webapp.WebAppContext;
+import org.eclipse.jetty.server.Connector;
+import org.eclipse.jetty.server.Handler;
+import org.eclipse.jetty.server.HttpConfiguration;
+import org.eclipse.jetty.server.HttpConnectionFactory;
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.server.ServerConnector;
+import org.eclipse.jetty.server.SslConnectionFactory;
+import org.eclipse.jetty.server.handler.ContextHandlerCollection;
+import org.eclipse.jetty.server.handler.DefaultHandler;
+import org.eclipse.jetty.server.handler.HandlerCollection;
+import org.eclipse.jetty.server.handler.RequestLogHandler;
+import org.eclipse.jetty.server.handler.ResourceHandler;
+import org.eclipse.jetty.util.ssl.SslContextFactory;
+import org.eclipse.jetty.webapp.WebAppContext;
 
 /**
  * Main class which simplifies starting a Jetty server instance, under http, https or both at the same time.
  * @author Phil Zoio
  */
 public class RunJetty {
-    
-    public static void main(String[] args) {
+	@SuppressWarnings("resource")
+	public static void main(String[] args) {
 
         if (args.length < 4) {
             System.out.println("Insufficient arguments supplied");
@@ -50,33 +55,55 @@ public class RunJetty {
 
             Server server = new Server();
             
-            SslSocketConnector sslConnector = null;
+            ServerConnector sslConnector = null;
             boolean https = scheme.equals("https");
             boolean http = scheme.equals("http");
             boolean both = scheme.equals("both");
             int sslPort = -1;
             if (https || both) {
                 
-                sslConnector = new SslSocketConnector();
-                sslPort = https ? port : Integer.parseInt(System.getProperty("ssl.port"));
-                sslConnector.setPort(sslPort);
-                sslConnector.setKeystore(System.getProperty("jetty.ssl.keystore"));
-                sslConnector.setPassword(System.getProperty("jetty.ssl.keystore.password"));
-                sslConnector.setKeyPassword(System.getProperty("jetty.ssl.key.password"));
-                sslConnector.setTruststore(System.getProperty("jetty.ssl.truststore"));
-                sslConnector.setTrustPassword(System.getProperty("jetty.ssl.truststore.password"));
+            	HttpConfiguration httpConfig = new HttpConfiguration();
+        		httpConfig.setSendServerVersion( false );
+        		HttpConnectionFactory httpFactory = new HttpConnectionFactory( httpConfig );
+        		
+        	    SslContextFactory sslContextFactory = new SslContextFactory();
+				try {
+					KeyStore keyStore = KeyStore.getInstance(System.getProperty("jetty.ssl.keystore"));
+					KeyStore trustStore = KeyStore.getInstance(System.getProperty("jetty.ssl.truststore"));
+					
+					sslContextFactory.setKeyStore(keyStore);
+	        	    sslContextFactory.setKeyStorePassword(System.getProperty("jetty.ssl.keystore.password"));
+	        	    sslContextFactory.setKeyManagerPassword(System.getProperty("jetty.ssl.key.password"));
+	        	    sslContextFactory.setTrustStore(trustStore);
+	        	    sslContextFactory.setTrustStorePassword(System.getProperty("jetty.ssl.truststore.password"));
+	        		    
+	        		SslConnectionFactory sslFactory =  new SslConnectionFactory(sslContextFactory, "http/1.1");
+
+	        		sslConnector = new ServerConnector(server,sslFactory,httpFactory);
+	        		
+	        		sslConnector = new ServerConnector( server,httpFactory );
+	                sslPort = https ? port : Integer.parseInt(System.getProperty("ssl.port"));
+	        		sslConnector.setPort(sslPort);
+	        		
+				} catch (KeyStoreException e) {
+					e.printStackTrace();
+				}
+        	    
             }
 
-            SelectChannelConnector connector = null;
+            ServerConnector connector = null;
             
             if (http || both) {
             
-                connector = new SelectChannelConnector();
-                connector.setPort(port);
-                
-                if (both) {
-                    connector.setConfidentialPort(sslPort);
+            	HttpConfiguration httpConfig = new HttpConfiguration();
+        		httpConfig.setSendServerVersion( false );
+        		if (both) {
+            		httpConfig.setSecurePort(sslPort);
                 }
+        		HttpConnectionFactory httpFactory = new HttpConnectionFactory( httpConfig );
+        		
+        		connector = new ServerConnector( server,httpFactory );
+                connector.setPort(port);
             }
             
             Connector[] connectors = null;
@@ -100,6 +127,7 @@ public class RunJetty {
             ContextHandlerCollection contexts = new ContextHandlerCollection();
 
             WebAppContext webAppContext = new WebAppContext(configLocation.getAbsolutePath(), contextPath);
+            
             contexts.addHandler(webAppContext);
 
             RequestLogHandler requestLogHandler = new RequestLogHandler();
@@ -107,7 +135,6 @@ public class RunJetty {
             server.setHandler(handlers);
 
             server.setStopAtShutdown(true);
-            server.setSendServerVersion(true);
 
             try {
                 server.start();
