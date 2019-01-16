@@ -13,8 +13,6 @@
  */
 
 import java.io.File;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
 
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Handler;
@@ -67,27 +65,19 @@ public class RunJetty {
         		HttpConnectionFactory httpFactory = new HttpConnectionFactory( httpConfig );
         		
         	    SslContextFactory sslContextFactory = new SslContextFactory();
-				try {
-					KeyStore keyStore = KeyStore.getInstance(System.getProperty("jetty.ssl.keystore"));
-					KeyStore trustStore = KeyStore.getInstance(System.getProperty("jetty.ssl.truststore"));
-					
-					sslContextFactory.setKeyStore(keyStore);
-	        	    sslContextFactory.setKeyStorePassword(System.getProperty("jetty.ssl.keystore.password"));
-	        	    sslContextFactory.setKeyManagerPassword(System.getProperty("jetty.ssl.key.password"));
-	        	    sslContextFactory.setTrustStore(trustStore);
-	        	    sslContextFactory.setTrustStorePassword(System.getProperty("jetty.ssl.truststore.password"));
-	        		    
-	        		SslConnectionFactory sslFactory =  new SslConnectionFactory(sslContextFactory, "http/1.1");
+        	    sslContextFactory.setKeyStorePath(System.getProperty("jetty.ssl.keystore"));
+        	    sslContextFactory.setKeyStorePassword(System.getProperty("jetty.ssl.keystore.password"));
+        	    sslContextFactory.setKeyManagerPassword(System.getProperty("jetty.ssl.key.password"));
+        	    sslContextFactory.setTrustStorePath(System.getProperty("jetty.ssl.truststore"));
+        	    sslContextFactory.setTrustStorePassword(System.getProperty("jetty.ssl.truststore.password"));
+        	    
+				SslConnectionFactory sslFactory =  new SslConnectionFactory(sslContextFactory, "http/1.1");
 
-	        		sslConnector = new ServerConnector(server,sslFactory,httpFactory);
-	        		
-	        		sslConnector = new ServerConnector( server,httpFactory );
-	                sslPort = https ? port : Integer.parseInt(System.getProperty("ssl.port"));
-	        		sslConnector.setPort(sslPort);
-	        		
-				} catch (KeyStoreException e) {
-					e.printStackTrace();
-				}
+				sslConnector = new ServerConnector(server,sslFactory,httpFactory);
+				
+				sslConnector = new ServerConnector( server,httpFactory );
+				sslPort = https ? port : Integer.parseInt(System.getProperty("ssl.port"));
+				sslConnector.setPort(sslPort);
         	    
             }
 
