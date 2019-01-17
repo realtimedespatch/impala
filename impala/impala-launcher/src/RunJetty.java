@@ -14,10 +14,12 @@
 
 import java.io.File;
 
+import org.eclipse.jetty.http.HttpVersion;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.HttpConfiguration;
 import org.eclipse.jetty.server.HttpConnectionFactory;
+import org.eclipse.jetty.server.SecureRequestCustomizer;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.server.SslConnectionFactory;
@@ -34,7 +36,6 @@ import org.eclipse.jetty.webapp.WebAppContext;
  * @author Phil Zoio
  */
 public class RunJetty {
-	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 
         if (args.length < 4) {
@@ -62,6 +63,7 @@ public class RunJetty {
                 
             	HttpConfiguration httpConfig = new HttpConfiguration();
         		httpConfig.setSendServerVersion( false );
+        		httpConfig.addCustomizer(new SecureRequestCustomizer());
         		HttpConnectionFactory httpFactory = new HttpConnectionFactory( httpConfig );
         		
         	    SslContextFactory sslContextFactory = new SslContextFactory();
@@ -71,11 +73,10 @@ public class RunJetty {
         	    sslContextFactory.setTrustStorePath(System.getProperty("jetty.ssl.truststore"));
         	    sslContextFactory.setTrustStorePassword(System.getProperty("jetty.ssl.truststore.password"));
         	    
-				SslConnectionFactory sslFactory =  new SslConnectionFactory(sslContextFactory, "http/1.1");
+				SslConnectionFactory sslFactory =  new SslConnectionFactory(sslContextFactory, HttpVersion.HTTP_1_1.asString());
 
 				sslConnector = new ServerConnector(server,sslFactory,httpFactory);
 				
-				sslConnector = new ServerConnector( server,httpFactory );
 				sslPort = https ? port : Integer.parseInt(System.getProperty("ssl.port"));
 				sslConnector.setPort(sslPort);
         	    
@@ -173,6 +174,7 @@ public class RunJetty {
         }
         return port;
     }
+    
 
     private static void usage() {
         System.out.println(RunJetty.class.getName() + " [port] [context directory] [path] [http|https|both]");
