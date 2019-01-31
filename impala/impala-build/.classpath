@@ -8,11 +8,11 @@
 	<classpathentry kind="lib" path="/impala-repository/build/ant-1.7.1.jar" sourcepath="/impala-repository/build/ant-1.7.1-sources.jar"/>
 	<classpathentry kind="lib" path="/impala-repository/build/ant-launcher-1.7.0.jar"/>
 	<classpathentry kind="lib" path="/impala-repository/main/jcl-over-slf4j-1.5.8.jar" sourcepath="/impala-repository/main/jcl-over-slf4j-1.5.8-sources.jar"/>
-	<classpathentry kind="lib" path="/impala-repository/main/log4j-1.2.15.jar"/>
-	<classpathentry kind="lib" path="/impala-repository/main/slf4j-api-1.5.8.jar"/>
-	<classpathentry kind="lib" path="/impala-repository/main/slf4j-log4j12-1.5.8.jar" sourcepath="/impala-repository/main/slf4j-log4j12-1.5.8-sources.jar"/>
 	<classpathentry kind="lib" path="/impala-repository/pgp/commons-openpgp-1.0-SNAPSHOT.jar"/>
 	<classpathentry kind="lib" path="/impala-repository/pgp/bcpg-jdk15-1.45.jar"/>
 	<classpathentry kind="lib" path="/impala-repository/pgp/bcprov-jdk15-1.45.jar"/>
+	<classpathentry kind="lib" path="/impala-repository/main/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="/impala-repository/main/slf4j-api-1.6.6.jar"/>
+	<classpathentry kind="lib" path="/impala-repository/main/slf4j-log4j12-1.6.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
