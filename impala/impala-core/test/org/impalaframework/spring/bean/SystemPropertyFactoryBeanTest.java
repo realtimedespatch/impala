@@ -14,8 +14,6 @@
 
 package org.impalaframework.spring.bean;
 
-import org.impalaframework.spring.bean.SystemPropertyFactoryBean;
-
 import junit.framework.TestCase;
 
 public class SystemPropertyFactoryBeanTest extends TestCase {

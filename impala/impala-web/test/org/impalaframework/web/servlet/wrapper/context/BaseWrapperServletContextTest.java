@@ -23,11 +23,10 @@ import java.net.MalformedURLException;
 
 import javax.servlet.ServletContext;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.web.servlet.qualifier.DefaultWebAttributeQualifier;
-import org.impalaframework.web.servlet.wrapper.context.PartitionedServletContext;
 import org.springframework.util.ClassUtils;
+
+import junit.framework.TestCase;
 
 public class BaseWrapperServletContextTest extends TestCase {
 

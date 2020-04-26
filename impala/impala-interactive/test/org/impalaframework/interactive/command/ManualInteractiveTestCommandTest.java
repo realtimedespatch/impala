@@ -18,14 +18,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.command.framework.Command;
 import org.impalaframework.command.framework.CommandLineInputCapturer;
 import org.impalaframework.command.framework.CommandState;
-import org.impalaframework.interactive.command.ExitCommand;
-import org.impalaframework.interactive.command.InteractiveTestCommand;
-import org.impalaframework.interactive.command.ReloadCommand;
+
+import junit.framework.TestCase;
 
 public class ManualInteractiveTestCommandTest extends TestCase {
 

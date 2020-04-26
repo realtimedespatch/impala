@@ -14,10 +14,10 @@
 
 package org.impalaframework.module.transition;
 
-import static org.impalaframework.module.spi.TransitionResultSetTest.*;
+import static org.impalaframework.module.spi.TransitionResultSetTest.newFailedTransitionResultSet;
+import static org.impalaframework.module.spi.TransitionResultSetTest.newSuccessTransitionResultSet;
 
 import org.impalaframework.module.spi.TransitionResultSet;
-import org.impalaframework.module.transition.TransitionsLogger;
 
 import junit.framework.TestCase;
 

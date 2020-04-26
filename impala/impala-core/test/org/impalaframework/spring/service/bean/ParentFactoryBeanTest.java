@@ -14,11 +14,11 @@
 
 package org.impalaframework.spring.service.bean;
 
-import junit.framework.TestCase;
-
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.beans.factory.support.BeanDefinitionValidationException;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import junit.framework.TestCase;
 
 /**
  * @author Phil Zoio
@@ -54,8 +54,9 @@ public class ParentFactoryBeanTest extends TestCase {
     
     public void testNoParent() throws Exception {
 
+    	ClassPathXmlApplicationContext classPathXmlApplicationContext = null;
         try {
-            new ClassPathXmlApplicationContext(new String[]{"childcontainer/child-factory.xml"});
+            classPathXmlApplicationContext = new ClassPathXmlApplicationContext(new String[]{"childcontainer/child-factory.xml"});
             fail();
         }
         catch (BeanCreationException e) {
@@ -63,6 +64,10 @@ public class ParentFactoryBeanTest extends TestCase {
             assertTrue(rootCause instanceof BeanDefinitionValidationException);
             BeanDefinitionValidationException cause = (BeanDefinitionValidationException) rootCause;
             assertTrue(cause.getMessage().startsWith("No parent bean factory of application context"));
+        } finally {
+        	if (classPathXmlApplicationContext != null) {
+        		classPathXmlApplicationContext.close();
+        	}
         }
     }
     

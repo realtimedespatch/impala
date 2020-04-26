@@ -10,11 +10,10 @@ import java.util.Arrays;
 
 import javax.servlet.ServletContext;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.constants.LocationConstants;
 import org.impalaframework.exception.ConfigurationException;
-import org.impalaframework.web.spring.loader.ConfigurableWebXmlBasedContextLoader;
+
+import junit.framework.TestCase;
 
 public class ConfigurableWebXmlBasedContextLoaderTest extends TestCase {
 

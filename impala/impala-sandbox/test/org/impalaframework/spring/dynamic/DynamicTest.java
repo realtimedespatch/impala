@@ -16,17 +16,13 @@ package org.impalaframework.spring.dynamic;
 
 import java.io.File;
 
-import junit.framework.TestCase;
-
-
 import org.impalaframework.spring.classloader.CustomClassLoaderFactory;
-import org.impalaframework.spring.dynamic.DynamicBeanFactory;
-import org.impalaframework.spring.dynamic.DynamicClassLoader;
-import org.impalaframework.spring.dynamic.DynamicScope;
 import org.impalaframework.spring.dynamic.impl.Person;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.core.io.ClassPathResource;
+
+import junit.framework.TestCase;
 
 public class DynamicTest extends TestCase {
 

@@ -14,10 +14,9 @@
 
 package org.impalaframework.interactive.command;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.facade.Impala;
-import org.impalaframework.interactive.command.InteractiveCommandUtils;
+
+import junit.framework.TestCase;
 
 public class InteractiveCommandUtilsTest extends TestCase {
 

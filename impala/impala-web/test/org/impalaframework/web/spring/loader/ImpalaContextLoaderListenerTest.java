@@ -22,16 +22,15 @@ import static org.easymock.classextension.EasyMock.verify;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.exception.ConfigurationException;
 import org.impalaframework.exception.ExecutionException;
 import org.impalaframework.web.WebConstants;
-import org.impalaframework.web.spring.loader.ImpalaContextLoaderListener;
 import org.springframework.beans.BeansException;
 import org.springframework.web.context.ContextLoader;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.GenericWebApplicationContext;
+
+import junit.framework.TestCase;
 
 public class ImpalaContextLoaderListenerTest extends TestCase {
 

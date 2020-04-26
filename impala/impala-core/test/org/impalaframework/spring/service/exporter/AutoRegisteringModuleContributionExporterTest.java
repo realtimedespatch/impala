@@ -16,12 +16,11 @@ package org.impalaframework.spring.service.exporter;
 
 import java.util.Collections;
 
-import junit.framework.TestCase;
-
 import org.easymock.EasyMock;
 import org.impalaframework.exception.ExecutionException;
-import org.impalaframework.spring.service.exporter.AutoRegisteringModuleContributionExporter;
 import org.springframework.beans.factory.BeanFactory;
+
+import junit.framework.TestCase;
 
 public class AutoRegisteringModuleContributionExporterTest extends TestCase {
 

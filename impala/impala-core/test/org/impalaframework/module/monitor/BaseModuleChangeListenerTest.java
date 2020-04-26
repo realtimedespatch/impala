@@ -17,10 +17,6 @@ package org.impalaframework.module.monitor;
 import java.util.ArrayList;
 import java.util.Set;
 
-import org.impalaframework.module.monitor.BaseModuleChangeListener;
-import org.impalaframework.module.monitor.ModuleChangeEvent;
-import org.impalaframework.module.monitor.ModuleChangeInfo;
-
 import junit.framework.TestCase;
 
 /**

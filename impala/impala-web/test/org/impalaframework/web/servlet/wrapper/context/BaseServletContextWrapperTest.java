@@ -20,8 +20,6 @@ import org.easymock.EasyMock;
 import org.impalaframework.module.definition.SimpleModuleDefinition;
 import org.impalaframework.util.ReflectionUtils;
 import org.impalaframework.web.servlet.qualifier.DefaultWebAttributeQualifier;
-import org.impalaframework.web.servlet.wrapper.context.PartitionedServletContextWrapper;
-import org.impalaframework.web.servlet.wrapper.context.PartitionedServletContext;
 import org.springframework.util.ClassUtils;
 
 import junit.framework.TestCase;

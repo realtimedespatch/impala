@@ -14,7 +14,6 @@
 
 package org.impalaframework.interactive.command;
 
-import org.impalaframework.interactive.command.ShowModulesCommand;
 import org.impalaframework.module.definition.SimpleRootModuleDefinition;
 
 import junit.framework.TestCase;

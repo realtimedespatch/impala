@@ -14,13 +14,11 @@
 
 package org.impalaframework.interactive.command;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.command.framework.GlobalCommandState;
 import org.impalaframework.exception.NoServiceException;
 import org.impalaframework.facade.Impala;
-import org.impalaframework.interactive.command.CommandStateConstants;
-import org.impalaframework.interactive.command.InitContextCommand;
+
+import junit.framework.TestCase;
 
 public class InitContextCommandTest extends TestCase {
 

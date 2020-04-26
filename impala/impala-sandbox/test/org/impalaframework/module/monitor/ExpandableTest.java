@@ -16,13 +16,12 @@ package org.impalaframework.module.monitor;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
-import junit.framework.TestCase;
-
-import org.impalaframework.module.monitor.RootModuleContextMonitor;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.core.io.ClassPathResource;
+
+import junit.framework.TestCase;
 
 /**
  * @author Phil Zoio

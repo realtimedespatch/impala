@@ -14,15 +14,14 @@
 
 package org.impalaframework.spring.service.registry.config;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.service.ServiceRegistry;
 import org.impalaframework.service.registry.ServiceRegistryAware;
 import org.impalaframework.service.registry.internal.DelegatingServiceRegistry;
 import org.impalaframework.spring.service.ProxyFactoryCreator;
 import org.impalaframework.spring.service.proxy.DefaultProxyFactoryCreator;
 import org.impalaframework.spring.service.proxy.ProxyFactoryCreatorAware;
-import org.impalaframework.spring.service.registry.config.ServiceRegistryPostProcessor;
+
+import junit.framework.TestCase;
 
 public class ServiceRegistryPostProcessorTest extends TestCase {
 

@@ -13,7 +13,6 @@
  */
 package org.impalaframework.spring.config;
 
-import org.impalaframework.spring.config.ExternalDynamicPropertySource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;

@@ -16,15 +16,14 @@ package org.impalaframework.module.source;
 
 import java.util.Arrays;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.module.ModuleDefinition;
 import org.impalaframework.module.RootModuleDefinition;
 import org.impalaframework.module.definition.ModuleTypes;
 import org.impalaframework.module.definition.SimpleModuleDefinition;
 import org.impalaframework.module.definition.SimpleRootModuleDefinition;
-import org.impalaframework.module.source.XMLModuleDefinitionSource;
 import org.springframework.core.io.ClassPathResource;
+
+import junit.framework.TestCase;
 
 public class XMLModuleDefinitionSourceTest extends TestCase {
     

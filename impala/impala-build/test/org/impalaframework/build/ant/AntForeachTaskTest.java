@@ -18,7 +18,6 @@ import java.io.File;
 import java.util.List;
 
 import org.apache.tools.ant.BuildException;
-import org.impalaframework.build.ant.AntForeachTask;
 
 import junit.framework.TestCase;
 

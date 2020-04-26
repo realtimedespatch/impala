@@ -23,13 +23,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.module.ModuleDefinition;
-import org.impalaframework.module.definition.DependencyManager;
-import org.impalaframework.module.definition.ModuleTypes;
-import org.impalaframework.module.definition.SimpleModuleDefinition;
-import org.impalaframework.module.definition.SimpleRootModuleDefinition;
+
+import junit.framework.TestCase;
 
 
 public class DependencyManagerTest extends TestCase {

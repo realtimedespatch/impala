@@ -17,8 +17,6 @@ package org.impalaframework.interactive.classloader;
 import java.io.File;
 import java.util.Map;
 
-import org.impalaframework.interactive.classloader.TestClassLoader;
-
 import junit.framework.TestCase;
 
 public class TestClassLoaderTest extends TestCase {

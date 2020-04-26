@@ -16,8 +16,6 @@ package org.impalaframework.module.definition;
 
 import org.impalaframework.module.ModuleContainer;
 import org.impalaframework.module.ModuleDefinition;
-import org.impalaframework.module.definition.ModuleContainerImpl;
-import org.impalaframework.module.definition.SimpleModuleDefinition;
 
 import junit.framework.TestCase;
 

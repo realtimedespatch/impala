@@ -9,8 +9,6 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.facade.ModuleManagementFacade;
 import org.impalaframework.module.spi.ApplicationManager;
 import org.impalaframework.module.spi.ModuleStateHolder;
@@ -18,10 +16,9 @@ import org.impalaframework.module.spi.TestApplicationManager;
 import org.impalaframework.spring.module.SpringRuntimeModule;
 import org.impalaframework.web.WebConstants;
 import org.impalaframework.web.servlet.qualifier.WebAttributeQualifier;
-import org.impalaframework.web.servlet.wrapper.session.PartitionedHttpSession;
-import org.impalaframework.web.servlet.wrapper.session.PartitionedHttpSessionWrapper;
-import org.impalaframework.web.servlet.wrapper.session.StateProtectingHttpSession;
 import org.springframework.util.ClassUtils;
+
+import junit.framework.TestCase;
 
 public class StateProtectingHttpSessionWrapperTest extends TestCase {
 

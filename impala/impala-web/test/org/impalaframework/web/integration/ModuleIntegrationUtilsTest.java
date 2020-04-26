@@ -22,13 +22,12 @@ import static org.easymock.EasyMock.verify;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.facade.ModuleManagementFacade;
 import org.impalaframework.web.WebConstants;
-import org.impalaframework.web.integration.ModuleIntegrationUtils;
 import org.impalaframework.web.servlet.wrapper.RequestModuleMapping;
 import org.impalaframework.web.servlet.wrapper.request.IdentityHttpRequestWrapper;
+
+import junit.framework.TestCase;
 
 public class ModuleIntegrationUtilsTest extends TestCase {
     

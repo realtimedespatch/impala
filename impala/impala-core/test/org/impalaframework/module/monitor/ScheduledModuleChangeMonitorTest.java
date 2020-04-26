@@ -19,13 +19,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-import junit.framework.TestCase;
-
-import org.impalaframework.module.monitor.ModuleChangeEvent;
-import org.impalaframework.module.monitor.ScheduledModuleChangeMonitor;
 import org.impalaframework.util.ResourceUtils;
 import org.springframework.core.io.Resource;
 import org.springframework.util.FileCopyUtils;
+
+import junit.framework.TestCase;
 
 /**
  * @author Phil Zoio

@@ -25,8 +25,6 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.facade.ModuleManagementFacade;
 import org.impalaframework.module.spi.ApplicationManager;
 import org.impalaframework.module.spi.ModuleStateHolder;
@@ -36,10 +34,11 @@ import org.impalaframework.util.ReflectionUtils;
 import org.impalaframework.web.WebConstants;
 import org.impalaframework.web.servlet.wrapper.CacheableHttpSession;
 import org.impalaframework.web.servlet.wrapper.RequestModuleMapping;
-import org.impalaframework.web.servlet.wrapper.request.MappedHttpServletRequest;
 import org.impalaframework.web.servlet.wrapper.session.PartitionedHttpSessionWrapper;
 import org.impalaframework.web.servlet.wrapper.session.StateProtectingHttpSession;
 import org.springframework.util.ClassUtils;
+
+import junit.framework.TestCase;
 
 public class PartitionedWrapperServletRequestTest extends TestCase {
 

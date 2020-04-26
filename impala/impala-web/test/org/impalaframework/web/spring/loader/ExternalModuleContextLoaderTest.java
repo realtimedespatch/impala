@@ -22,14 +22,13 @@ import static org.easymock.EasyMock.verify;
 
 import javax.servlet.ServletContext;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.constants.LocationConstants;
 import org.impalaframework.exception.ConfigurationException;
 import org.impalaframework.facade.ModuleManagementFacade;
 import org.impalaframework.module.type.TypeReaderRegistryFactory;
 import org.impalaframework.resolver.StandaloneModuleLocationResolver;
-import org.impalaframework.web.spring.loader.ExternalModuleContextLoader;
+
+import junit.framework.TestCase;
 
 public class ExternalModuleContextLoaderTest extends TestCase {
 

@@ -14,15 +14,12 @@
 
 package org.impalaframework.interactive.command;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.command.framework.CommandDefinition;
 import org.impalaframework.command.framework.CommandState;
 import org.impalaframework.command.framework.GlobalCommandState;
 import org.impalaframework.exception.NoServiceException;
-import org.impalaframework.interactive.command.CommandStateConstants;
-import org.impalaframework.interactive.command.InitContextCommand;
-import org.impalaframework.interactive.command.ReloadCommand;
+
+import junit.framework.TestCase;
 
 public class ReloadCommandTest extends TestCase {
 

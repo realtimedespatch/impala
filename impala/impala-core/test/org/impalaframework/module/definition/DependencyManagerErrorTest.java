@@ -22,14 +22,10 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.exception.InvalidStateException;
 import org.impalaframework.module.ModuleDefinition;
-import org.impalaframework.module.definition.DependencyManager;
-import org.impalaframework.module.definition.ModuleTypes;
-import org.impalaframework.module.definition.SimpleModuleDefinition;
-import org.impalaframework.module.definition.SimpleRootModuleDefinition;
+
+import junit.framework.TestCase;
 
 /**
  * Tests for various corner and error cases for {@link DependencyManager}

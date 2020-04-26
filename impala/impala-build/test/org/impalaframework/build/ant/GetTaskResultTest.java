@@ -17,8 +17,6 @@ package org.impalaframework.build.ant;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.impalaframework.build.ant.Result;
-
 import junit.framework.TestCase;
 
 /**

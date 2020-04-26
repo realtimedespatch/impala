@@ -16,11 +16,10 @@ package org.impalaframework.build.ant;
 
 import java.io.File;
 
-import junit.framework.TestCase;
-
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
-import org.impalaframework.build.ant.GetTask;
+
+import junit.framework.TestCase;
 
 /**
  * @author Phil Zoio

@@ -1,7 +1,5 @@
 package org.impalaframework.build.ant;
 
-import org.impalaframework.build.ant.SVNRevisionTask;
-
 import junit.framework.TestCase;
 
 public class SVNRevisionTaskTest extends TestCase {

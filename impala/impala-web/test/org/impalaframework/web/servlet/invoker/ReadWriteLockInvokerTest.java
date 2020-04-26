@@ -21,11 +21,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import junit.framework.TestCase;
-
 import org.easymock.classextension.EasyMock;
 import org.impalaframework.module.spi.FrameworkLockHolder;
-import org.impalaframework.web.servlet.invoker.ReadWriteLockingInvoker;
+
+import junit.framework.TestCase;
 
 public class ReadWriteLockInvokerTest extends TestCase {
     

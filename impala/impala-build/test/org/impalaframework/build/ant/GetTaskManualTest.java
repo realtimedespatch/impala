@@ -18,10 +18,9 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import junit.framework.TestCase;
-
 import org.apache.tools.ant.Project;
-import org.impalaframework.build.ant.GetTask;
+
+import junit.framework.TestCase;
 
 /**
  * @author Phil Zoio

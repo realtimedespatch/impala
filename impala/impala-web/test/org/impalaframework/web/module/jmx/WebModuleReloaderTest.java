@@ -23,8 +23,6 @@ import static org.easymock.classextension.EasyMock.verify;
 
 import javax.servlet.ServletContext;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.exception.ConfigurationException;
 import org.impalaframework.facade.ModuleManagementFacade;
 import org.impalaframework.module.ModuleDefinitionSource;
@@ -36,7 +34,8 @@ import org.impalaframework.module.operation.ModuleOperationResult;
 import org.impalaframework.module.spi.ApplicationManager;
 import org.impalaframework.module.spi.TestApplicationManager;
 import org.impalaframework.web.WebConstants;
-import org.impalaframework.web.module.jmx.WebModuleReloader;
+
+import junit.framework.TestCase;
 
 public class WebModuleReloaderTest extends TestCase {
 

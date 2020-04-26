@@ -22,11 +22,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import junit.framework.TestCase;
-
 import org.easymock.EasyMock;
 import org.impalaframework.classloader.ModuleClassLoader;
-import org.impalaframework.web.servlet.invoker.ThreadContextClassLoaderHttpServiceInvoker;
+
+import junit.framework.TestCase;
 
 public class ThreadContextClassLoaderHttpServiceInvokerTest extends TestCase {
     

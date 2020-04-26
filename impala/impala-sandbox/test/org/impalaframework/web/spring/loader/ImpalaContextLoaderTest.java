@@ -25,15 +25,14 @@ import java.util.List;
 
 import javax.servlet.ServletContext;
 
-import junit.framework.TestCase;
-
 import org.easymock.EasyMock;
 import org.impalaframework.exception.ConfigurationException;
 import org.impalaframework.facade.ModuleManagementFacade;
 import org.impalaframework.module.ModuleDefinitionSource;
 import org.impalaframework.module.RootModuleDefinition;
 import org.impalaframework.web.WebConstants;
-import org.impalaframework.web.spring.loader.WebXmlBasedContextLoader;
+
+import junit.framework.TestCase;
 
 public class ImpalaContextLoaderTest extends TestCase {
 

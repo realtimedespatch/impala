@@ -24,10 +24,6 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-import org.impalaframework.graph.CyclicDependencyException;
-import org.impalaframework.graph.GraphHelper;
-import org.impalaframework.graph.Vertex;
-
 import junit.framework.TestCase;
 
 

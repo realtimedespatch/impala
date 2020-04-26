@@ -17,7 +17,6 @@ package org.impalaframework.web.facade;
 import java.util.List;
 
 import org.impalaframework.startup.ContextStarter;
-import org.impalaframework.web.facade.AttributeServletContext;
 import org.springframework.context.ApplicationContext;
 import org.springframework.util.Assert;
 import org.springframework.web.context.support.XmlWebApplicationContext;

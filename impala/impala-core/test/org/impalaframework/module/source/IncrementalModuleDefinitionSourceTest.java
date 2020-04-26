@@ -17,16 +17,14 @@ package org.impalaframework.module.source;
 import java.util.Arrays;
 import java.util.List;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.exception.ConfigurationException;
 import org.impalaframework.module.ModuleDefinition;
 import org.impalaframework.module.RootModuleDefinition;
-import org.impalaframework.module.source.IncrementalModuleDefinitionSource;
-import org.impalaframework.module.source.InternalModuleDefinitionSource;
 import org.impalaframework.module.type.TypeReaderRegistry;
 import org.impalaframework.module.type.TypeReaderRegistryFactory;
 import org.impalaframework.resolver.StandaloneModuleLocationResolver;
+
+import junit.framework.TestCase;
 
 public class IncrementalModuleDefinitionSourceTest extends TestCase {
     

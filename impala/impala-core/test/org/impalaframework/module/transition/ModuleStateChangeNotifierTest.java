@@ -14,6 +14,11 @@
 
 package org.impalaframework.module.transition;
 
+import static org.easymock.EasyMock.createMock;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.verify;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,9 +28,6 @@ import org.impalaframework.module.spi.ModuleStateChangeListener;
 import org.impalaframework.module.spi.ModuleStateHolder;
 import org.impalaframework.module.spi.Transition;
 import org.impalaframework.module.spi.TransitionResult;
-import org.impalaframework.module.transition.DefaultModuleStateChangeNotifier;
-
-import static org.easymock.EasyMock.*;
 
 import junit.framework.TestCase;
 

@@ -17,10 +17,6 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
-import junit.framework.TestCase;
-
-import org.impalaframework.module.beanset.BeanSetNode;
-import org.impalaframework.module.beanset.RecordingImportingBeanDefinitionDocumentReader;
 import org.impalaframework.module.beanset.impl.Bean1;
 import org.impalaframework.module.beanset.impl.Bean2;
 import org.impalaframework.module.beanset.impl.Bean3;
@@ -30,6 +26,8 @@ import org.springframework.beans.factory.xml.BeanDefinitionDocumentReader;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.core.io.ClassPathResource;
+
+import junit.framework.TestCase;
 
 /**
  * Test for <code>RecordingImportingBeanDefinitionDocumentReader</code>

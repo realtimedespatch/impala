@@ -17,9 +17,6 @@ package org.impalaframework.module.monitor;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.impalaframework.module.monitor.ModuleChangeEvent;
-import org.impalaframework.module.monitor.ModuleContentChangeListener;
-
 /**
  * @author Phil Zoio
  */

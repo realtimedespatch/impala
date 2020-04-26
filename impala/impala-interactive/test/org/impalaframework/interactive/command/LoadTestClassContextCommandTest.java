@@ -14,12 +14,10 @@
 
 package org.impalaframework.interactive.command;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.command.framework.CommandState;
 import org.impalaframework.command.framework.GlobalCommandState;
-import org.impalaframework.interactive.command.CommandStateConstants;
-import org.impalaframework.interactive.command.LoadTestClassContextCommand;
+
+import junit.framework.TestCase;
 
 public class LoadTestClassContextCommandTest extends TestCase {
 

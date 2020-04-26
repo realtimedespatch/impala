@@ -14,12 +14,11 @@
 
 package org.impalaframework.module.source;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.exception.ConfigurationException;
-import org.impalaframework.module.source.XMLModulelDefinitionDocumentLoader;
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
+
+import junit.framework.TestCase;
 
 public class XMLModuleDefinitionDocumentLoaderTest extends TestCase {
 

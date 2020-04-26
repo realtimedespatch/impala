@@ -14,11 +14,12 @@
 
 package org.impalaframework.web.spring.bean;
 
+import static org.easymock.EasyMock.createMock;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.verify;
+
 import javax.servlet.ServletContext;
-
-import org.impalaframework.web.spring.bean.SystemPropertyServletContextParamFactoryBean;
-
-import static org.easymock.EasyMock.*;
 
 import junit.framework.TestCase;
 

@@ -21,9 +21,6 @@ package org.impalaframework.graph;
 
 import java.util.List;
 
-import org.impalaframework.graph.CyclicDependencyException;
-import org.impalaframework.graph.Vertex;
-
 import junit.framework.TestCase;
 
 /**

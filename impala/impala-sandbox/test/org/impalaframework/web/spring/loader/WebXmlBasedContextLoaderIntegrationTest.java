@@ -23,16 +23,15 @@ import static org.easymock.EasyMock.verify;
 
 import javax.servlet.ServletContext;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.constants.LocationConstants;
 import org.impalaframework.facade.ModuleManagementFacade;
 import org.impalaframework.module.source.SingleStringModuleDefinitionSource;
 import org.impalaframework.web.WebConstants;
-import org.impalaframework.web.spring.loader.WebXmlBasedContextLoader;
 import org.springframework.web.context.ContextLoader;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.GenericWebApplicationContext;
+
+import junit.framework.TestCase;
 
 public class WebXmlBasedContextLoaderIntegrationTest extends TestCase {
 

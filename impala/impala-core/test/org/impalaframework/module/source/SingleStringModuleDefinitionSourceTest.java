@@ -14,13 +14,11 @@
 
 package org.impalaframework.module.source;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.exception.ConfigurationException;
 import org.impalaframework.module.RootModuleDefinition;
 import org.impalaframework.module.definition.SimpleRootModuleDefinition;
-import org.impalaframework.module.source.SingleStringModuleDefinitionSource;
-import org.impalaframework.module.source.SingleStringSourceDelegate;
+
+import junit.framework.TestCase;
 
 public class SingleStringModuleDefinitionSourceTest extends TestCase {
 

@@ -14,14 +14,13 @@
 
 package org.impalaframework.module.loader;
 
-import junit.framework.TestCase;
-
 import org.easymock.EasyMock;
 import org.impalaframework.exception.ExecutionException;
-import org.impalaframework.module.loader.ModuleUtils;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+
+import junit.framework.TestCase;
 
 /**
  * @author Phil Zoio

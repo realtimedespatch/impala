@@ -14,18 +14,15 @@
 
 package org.impalaframework.interactive.command;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.command.framework.CommandState;
 import org.impalaframework.command.framework.GlobalCommandState;
 import org.impalaframework.exception.NoServiceException;
 import org.impalaframework.facade.Impala;
-import org.impalaframework.interactive.command.CommandStateConstants;
-import org.impalaframework.interactive.command.RerunTestCommand;
-import org.impalaframework.interactive.command.RunTestCommand;
 import org.impalaframework.resolver.ModuleLocationResolver;
 import org.impalaframework.resolver.StandaloneModuleLocationResolver;
 import org.impalaframework.util.PathUtils;
+
+import junit.framework.TestCase;
 
 public class RunTestCommandTest extends TestCase {
 

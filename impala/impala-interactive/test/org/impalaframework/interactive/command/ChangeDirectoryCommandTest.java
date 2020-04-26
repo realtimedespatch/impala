@@ -17,8 +17,6 @@ package org.impalaframework.interactive.command;
 import org.impalaframework.command.framework.CommandPropertyValue;
 import org.impalaframework.command.framework.CommandState;
 import org.impalaframework.command.framework.GlobalCommandState;
-import org.impalaframework.interactive.command.ChangeDirectoryCommand;
-import org.impalaframework.interactive.command.CommandStateConstants;
 import org.impalaframework.resolver.StandaloneModuleLocationResolver;
 
 import junit.framework.TestCase;

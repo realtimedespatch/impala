@@ -16,12 +16,9 @@ package org.impalaframework.spring.config;
 
 import java.util.concurrent.Executors;
 
-import junit.framework.TestCase;
-
-import org.impalaframework.spring.config.DynamicPropertiesFactoryBean;
-import org.impalaframework.spring.config.DynamicPropertySource;
-import org.impalaframework.spring.config.ExternalDynamicPropertySource;
 import org.springframework.core.io.ClassPathResource;
+
+import junit.framework.TestCase;
 
 public class ManualDynamicPropertiesPropertySourceTest extends TestCase {
 

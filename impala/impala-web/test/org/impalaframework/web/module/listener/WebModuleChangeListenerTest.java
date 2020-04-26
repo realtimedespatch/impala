@@ -25,8 +25,6 @@ import java.util.ArrayList;
 
 import javax.servlet.ServletContext;
 
-import junit.framework.TestCase;
-
 import org.impalaframework.facade.ModuleManagementFacade;
 import org.impalaframework.module.monitor.ModuleChangeEvent;
 import org.impalaframework.module.monitor.ModuleChangeInfo;
@@ -39,7 +37,8 @@ import org.impalaframework.module.spi.Application;
 import org.impalaframework.module.spi.ApplicationManager;
 import org.impalaframework.module.spi.TestApplicationManager;
 import org.impalaframework.web.WebConstants;
-import org.impalaframework.web.module.listener.WebModuleChangeListener;
+
+import junit.framework.TestCase;
 
 public class WebModuleChangeListenerTest extends TestCase {
 

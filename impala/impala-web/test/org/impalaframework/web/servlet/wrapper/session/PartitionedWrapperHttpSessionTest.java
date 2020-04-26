@@ -25,8 +25,6 @@ import java.util.Properties;
 
 import javax.servlet.http.HttpSession;
 
-import junit.framework.TestCase;
-
 import org.easymock.EasyMock;
 import org.impalaframework.classloader.ModuleClassLoader;
 import org.impalaframework.config.PropertySource;
@@ -41,8 +39,9 @@ import org.impalaframework.web.servlet.qualifier.IdentityWebAttributeQualifier;
 import org.impalaframework.web.servlet.qualifier.WebAttributeQualifier;
 import org.impalaframework.web.servlet.wrapper.SerializableValueHolder;
 import org.impalaframework.web.servlet.wrapper.ValueHolder;
-import org.impalaframework.web.servlet.wrapper.session.StateProtectingHttpSession;
 import org.springframework.util.ClassUtils;
+
+import junit.framework.TestCase;
 
 public class PartitionedWrapperHttpSessionTest extends TestCase {
 

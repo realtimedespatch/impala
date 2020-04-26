@@ -14,16 +14,15 @@
 
 package org.impalaframework.web.servlet.invoker;
 
-import static org.easymock.classextension.EasyMock.*;
+import static org.easymock.classextension.EasyMock.createMock;
+import static org.easymock.classextension.EasyMock.replay;
+import static org.easymock.classextension.EasyMock.verify;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.impalaframework.web.servlet.invoker.HttpServiceInvoker;
-import org.impalaframework.web.servlet.invoker.ServletInvokerUtils;
 
 import junit.framework.TestCase;
 
