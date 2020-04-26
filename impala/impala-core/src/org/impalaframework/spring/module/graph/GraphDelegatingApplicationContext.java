@@ -36,6 +36,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.MessageSourceResolvable;
 import org.springframework.context.NoSuchMessageException;
+import org.springframework.core.ResolvableType;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.Resource;
 import org.springframework.util.Assert;
@@ -207,10 +208,10 @@ public class GraphDelegatingApplicationContext implements ApplicationContext, Be
     public <T> T getBean(Class<T> requiredType) throws BeansException {
     	return null;
     }
-    
+
     /* ***************** Methods simply delegating to parent ***************** */
 
-    @Override
+	@Override
 	public Environment getEnvironment() {
 		return parent.getEnvironment();
 	}
@@ -283,6 +284,28 @@ public class GraphDelegatingApplicationContext implements ApplicationContext, Be
             throws NoSuchBeanDefinitionException {
         return parent.isTypeMatch(name, targetType);
     }
+    
+    /* ************************ Methods added to with 4.x ******************** */
+    
+    @Override
+	public String[] getBeanNamesForType(ResolvableType type) {
+		return parent.getBeanNamesForType(type);
+    }
+
+	@Override
+	public String[] getBeanNamesForAnnotation(Class<? extends Annotation> annotationType) {
+		return parent.getBeanNamesForAnnotation(annotationType);
+	}
+
+	@Override
+	public <T> T getBean(Class<T> requiredType, Object... args) throws BeansException {
+		return parent.getBean(requiredType, args);
+	}
+
+	@Override
+	public boolean isTypeMatch(String name, ResolvableType typeToMatch) throws NoSuchBeanDefinitionException {
+		return parent.isTypeMatch(name, typeToMatch);
+	}
 
     public boolean containsLocalBean(String name) {
         return parent.containsLocalBean(name);

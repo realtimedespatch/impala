@@ -9,22 +9,14 @@
 	<classpathentry exported="true" kind="lib" path="/impala-repository/main/jcl-over-slf4j-1.6.6.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/test/easymock-2.5.1.jar" sourcepath="/impala-repository/test/easymock-2.5.1-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/test/easymockclassextension-2.4.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-aop-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-aop-3.2.0.RELEASE.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-beans-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-beans-3.2.0.RELEASE.jar" sourcepath="/impala-repository/main/spring-beans-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-context-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-context-3.2.0.RELEASE.jar" sourcepath="/impala-repository/main/spring-context-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-context-support-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-context-support-3.2.0.RELEASE.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-core-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-core-3.2.0.RELEASE.jar" sourcepath="/impala-repository/main/spring-core-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-expression-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-expression-3.2.0.RELEASE.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-web-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-web-3.2.0.RELEASE.jar" sourcepath="/impala-repository/main/spring-web-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-webmvc-3.2.0.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-webmvc-3.2.0.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-aop-4.3.26.RELEASE.jar" sourcepath="/impala-repository/main/spring-aop-4.3.26.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-beans-4.3.26.RELEASE.jar" sourcepath="/impala-repository/main/spring-beans-4.3.26.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-context-4.3.26.RELEASE.jar" sourcepath="/impala-repository/main/spring-context-4.3.26.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-context-support-4.3.26.RELEASE.jar" sourcepath="/impala-repository/main/spring-context-4.3.26.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-core-4.3.26.RELEASE.jar" sourcepath="/impala-repository/main/spring-core-4.3.26.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-expression-4.3.26.RELEASE.jar" sourcepath="/impala-repository/main/spring-expression-4.3.26.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-web-4.3.26.RELEASE.jar" sourcepath="/impala-repository/main/spring-web-4.3.26.RELEASE-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-webmvc-4.3.26.RELEASE.jar" sourcepath="/impala-repository/main/spring-webmvc-4.3.26.RELEASE-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/main/aopalliance-1.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/main/log4j-1.2.17.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/main/slf4j-api-1.6.6.jar"/>

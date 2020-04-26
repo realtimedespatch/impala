@@ -36,6 +36,7 @@ import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.core.ResolvableType;
 import org.springframework.util.Assert;
 
 public class DefaultModuleManagementFacade implements BeanFactory, ModuleManagementFacade, ApplicationContextAware,
@@ -221,7 +222,17 @@ public class DefaultModuleManagementFacade implements BeanFactory, ModuleManagem
         return this.applicationContext.isTypeMatch(name, targetType);
     }
 
-    public void close() {
+    @Override
+	public <T> T getBean(Class<T> requiredType, Object... args) throws BeansException {
+		return this.applicationContext.getBean(requiredType, args);
+	}
+
+	@Override
+	public boolean isTypeMatch(String name, ResolvableType typeToMatch) throws NoSuchBeanDefinitionException {
+		return this.applicationContext.isTypeMatch(name, typeToMatch);
+	}
+
+	public void close() {
         this.applicationContext.close();
     }
 
