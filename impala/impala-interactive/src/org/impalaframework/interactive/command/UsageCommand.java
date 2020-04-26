@@ -36,7 +36,7 @@ public class UsageCommand implements Command {
     private Map<String, List<String>> aliasLookups;
 
     public UsageCommand(Map<String, Command> commands, Map<String, String> aliases) {
-        Assert.notNull(commands);
+        Assert.notNull(commands, "commands cannot be null");
         this.commands = commands;
 
         if (aliases != null) {

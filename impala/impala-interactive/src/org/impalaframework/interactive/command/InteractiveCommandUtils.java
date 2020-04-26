@@ -51,7 +51,7 @@ public class InteractiveCommandUtils {
     }
     
     public static boolean isRootProject(String directoryName) {
-        Assert.notNull(directoryName);
+        Assert.notNull(directoryName, "directory name cannot be null");
         String rootProject = getRootProject();
         
         return directoryName.equals(rootProject);

@@ -52,7 +52,7 @@ public class ChangeDirectoryCommand implements TextParsingCommand {
         CommandPropertyValue suppliedValue = commandState.getProperties().get(DIRECTORY_NAME);
         
         //we can call this because the getCommandDefinition contract demands this
-        Assert.notNull(suppliedValue);
+        Assert.notNull(suppliedValue, "direct name property cannot be null");
 
         String candidateValue = suppliedValue.getValue();
 
