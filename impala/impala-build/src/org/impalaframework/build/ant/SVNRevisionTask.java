@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Base64;
 
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
@@ -49,8 +50,7 @@ public class SVNRevisionTask extends Task {
         
             //get user name and password, and set authentication
             String userPassword = user + ":" + password;
-            String encoding = new sun.misc.BASE64Encoder().encode(userPassword
-                    .getBytes());
+            String encoding = Base64.getEncoder().encodeToString(userPassword.getBytes());
             
             uc.setRequestProperty("Authorization", "Basic " + encoding);
         }
