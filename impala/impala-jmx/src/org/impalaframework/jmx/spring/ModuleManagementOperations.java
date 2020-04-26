@@ -41,7 +41,7 @@ public class ModuleManagementOperations {
     private ApplicationManager applicationManager;
 
     public void init() {
-        Assert.notNull(moduleOperationRegistry);
+        Assert.notNull(moduleOperationRegistry, "moduleOperationRegistry cannot be null");
     }
 
     /**
