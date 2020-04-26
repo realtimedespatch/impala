@@ -18,7 +18,6 @@ import java.util.Collections;
 import java.util.Enumeration;
 
 import org.impalaframework.util.CollectionStringUtils;
-import org.impalaframework.web.servlet.qualifier.IdentityWebAttributeQualifier;
 
 import junit.framework.TestCase;
 
