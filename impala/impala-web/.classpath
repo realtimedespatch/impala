@@ -7,7 +7,7 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/impala-core"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/jsp-api-2.1.jar" sourcepath="/impala-repository/jetty/jsp-api-2.1-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/servlet-api-2.5.jar" sourcepath="/impala-repository/jetty/servlet-api-2.5-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-webmvc-3.2.0.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-webmvc-4.3.26.RELEASE.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/jasper-6.0.20.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/jasper-el-6.0.20.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/jasper-jdt-6.0.20.jar"/>
