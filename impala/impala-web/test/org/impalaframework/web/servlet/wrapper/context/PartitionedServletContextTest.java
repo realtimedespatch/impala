@@ -16,18 +16,18 @@ package org.impalaframework.web.servlet.wrapper.context;
 
 import static org.easymock.EasyMock.createMock;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import java.util.List;
 
 import javax.servlet.ServletContext;
-
-import junit.framework.TestCase;
 
 import org.impalaframework.util.CollectionStringUtils;
 import org.impalaframework.web.facade.AttributeServletContext;
 import org.impalaframework.web.servlet.qualifier.DefaultWebAttributeQualifier;
 import org.springframework.util.ClassUtils;
+
+import junit.framework.TestCase;
 
 public class PartitionedServletContextTest extends TestCase {
 
@@ -50,8 +50,12 @@ public class PartitionedServletContextTest extends TestCase {
         
         wrapperContext = new PartitionedServletContext(realContext, "", "mymodule", new DefaultWebAttributeQualifier(), ClassUtils.getDefaultClassLoader());
         Enumeration<String> attributeNames = wrapperContext.getAttributeNames();
-        ArrayList<String> list = Collections.list(attributeNames);
-        assertEquals(CollectionStringUtils.parseStringList("application__module_mymodule:mykey,application__module_mymodule:anotherkey"), list);
+        List<String> actual = Collections.list(attributeNames);
+        List<String> expected = CollectionStringUtils.parseStringList("application__module_mymodule:mykey,application__module_mymodule:anotherkey");
+        Collections.sort(actual);
+        Collections.sort(expected);
+        
+		assertEquals(expected, actual);
     }
     
     public void testGetWriteKeyToUse() throws Exception {
