@@ -14,14 +14,14 @@
 
 package org.impalaframework.web.servlet.qualifier;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
-
-import junit.framework.TestCase;
+import java.util.List;
 
 import org.impalaframework.util.CollectionStringUtils;
 import org.impalaframework.web.facade.AttributeServletContext;
+
+import junit.framework.TestCase;
 
 public class WebAttributeQualifierTest extends TestCase {
 
@@ -50,8 +50,16 @@ public class WebAttributeQualifierTest extends TestCase {
         
         Enumeration<String> names = (Enumeration<String>) realContext.getAttributeNames();
 		Enumeration<String> attributeNames = qualifier.filterAttributeNames(names, "", "mymodule");
-        ArrayList<String> list = Collections.list(attributeNames);
-        assertEquals(CollectionStringUtils.parseStringList("application__module_mymodule:mykey,application__module_mymodule:anotherkey"), list);
+        List<String> actual = Collections.list(attributeNames);
+        List<String> expected = CollectionStringUtils.parseStringList("application__module_mymodule:mykey,application__module_mymodule:anotherkey");
+        
+        Collections.sort(actual);
+        Collections.sort(expected);
+        
+        System.out.println(expected);
+        System.out.println(actual);
+        
+		assertEquals(expected, actual);
     }
     
 }
