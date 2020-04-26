@@ -33,7 +33,7 @@ public class DelegatingHttpSession implements HttpSession {
 
     public DelegatingHttpSession(HttpSession realSession) {
         super();
-        Assert.notNull(realSession);
+        Assert.notNull(realSession, "realSession cannot be null");
         this.realSession = realSession;
     }
 

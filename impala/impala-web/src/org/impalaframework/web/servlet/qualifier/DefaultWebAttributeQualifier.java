@@ -47,9 +47,9 @@ public class DefaultWebAttributeQualifier implements WebAttributeQualifier {
      * @return the qualified attribute name.
      */
     public String getQualifiedAttributeName(String attributeName, String applicationId, String moduleName) {
-        Assert.notNull(attributeName);
-        Assert.notNull(applicationId);
-        Assert.notNull(moduleName);
+        Assert.notNull(attributeName, "attributeName cannot be null");
+        Assert.notNull(applicationId, "applicationId cannot be null");
+        Assert.notNull(moduleName, "moduleName cannot be null");
         
         final String keyToUse;
         if (attributeName.startsWith(SHARED_PREFIX)) {

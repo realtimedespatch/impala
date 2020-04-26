@@ -32,7 +32,7 @@ public abstract class WebServletUtils {
 
     public static ModuleManagementFacade getModuleManagementFacade(ServletContext servletContext) {
         
-        Assert.notNull(servletContext);
+        Assert.notNull(servletContext, "servletContext cannot be null");
         final String attributeName = WebConstants.IMPALA_FACTORY_ATTRIBUTE;
         final Object attribute = servletContext.getAttribute(attributeName);
         

@@ -46,7 +46,7 @@ public class DelegatingServletContext implements ServletContext {
 
     public DelegatingServletContext(ServletContext realContext) {
         super();
-        Assert.notNull(realContext);
+        Assert.notNull(realContext, "realContext cannot be null");
         this.realContext = realContext;
     }
 

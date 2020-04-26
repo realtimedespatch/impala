@@ -57,7 +57,7 @@ public class ServletContextModuleLocationResolver implements ModuleLocationResol
     }
 
     public void afterPropertiesSet() throws Exception {
-        Assert.notNull(relativeModuleRootLocation);
+        Assert.notNull(relativeModuleRootLocation, "relativeModuleRootLocation cannot be null");
     }
 
     public Resource getRootDirectory() {

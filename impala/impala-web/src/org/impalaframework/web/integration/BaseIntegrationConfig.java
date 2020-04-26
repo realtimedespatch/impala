@@ -34,9 +34,9 @@ public abstract class BaseIntegrationConfig {
     
     public BaseIntegrationConfig(Map<String, String> initParameterMap, ServletContext servletContext, String servletName) {
         super();
-        Assert.notNull(initParameterMap);
-        Assert.notNull(servletContext);
-        Assert.notNull(servletName);
+        Assert.notNull(initParameterMap, "initParameterMap cannot be null");
+        Assert.notNull(servletContext, "servletContext cannot be null");
+        Assert.notNull(servletName, "servletName cannot be null");
         this.initParameterMap = initParameterMap;
         this.servletContext = servletContext;
         this.name = servletName;

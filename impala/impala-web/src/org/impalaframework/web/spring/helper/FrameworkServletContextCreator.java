@@ -58,7 +58,7 @@ public class FrameworkServletContextCreator  {
 	private FrameworkServlet servlet;
 
 	public FrameworkServletContextCreator(FrameworkServlet servlet) {
-		Assert.notNull(servlet);
+		Assert.notNull(servlet, "servet cannot be null");
 		this.servlet = servlet;
 	}
 

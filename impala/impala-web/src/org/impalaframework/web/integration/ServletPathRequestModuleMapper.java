@@ -31,12 +31,12 @@ public class ServletPathRequestModuleMapper implements RequestModuleMapper {
     private String prefix;
 
     public void init(ServletConfig servletConfig) {     
-        Assert.notNull(servletConfig);
+        Assert.notNull(servletConfig, "servetConfig cannot be null");
         this.prefix = servletConfig.getInitParameter("modulePrefix");
     }
 
     public void init(FilterConfig filterConfig) {
-        Assert.notNull(filterConfig);
+        Assert.notNull(filterConfig, "filterConfig cannot be null");
         this.prefix = filterConfig.getInitParameter("modulePrefix");
     }
     

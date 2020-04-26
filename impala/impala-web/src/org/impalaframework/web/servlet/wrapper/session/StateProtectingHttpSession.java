@@ -56,7 +56,7 @@ public class StateProtectingHttpSession extends PartitionedHttpSession implement
             String moduleName, 
             ClassLoader moduleClassLoader) {
         super(realSession, webAttributeQualifier, applicationId, moduleName);
-        Assert.notNull(moduleClassLoader);
+        Assert.notNull(moduleClassLoader, "moduleClassLoader cannot be null");
         this.moduleClassLoader = moduleClassLoader;
     }
 

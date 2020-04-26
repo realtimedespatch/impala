@@ -61,7 +61,7 @@ public class WebappPropertyPlaceholderConfigurer extends SystemPropertyBasedPlac
     }
 
     public String getWebContextName(ServletContext servletContext) {
-        Assert.notNull(servletContext);
+        Assert.notNull(servletContext, "servletContext cannot be null");
         String webContextName = servletContext.getInitParameter(WEBAPP_CONFIG_PROPERTY_NAME);
 
         if (webContextName == null) {

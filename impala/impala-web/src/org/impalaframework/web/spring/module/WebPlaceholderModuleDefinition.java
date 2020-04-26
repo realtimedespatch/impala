@@ -42,8 +42,8 @@ public class WebPlaceholderModuleDefinition implements ModuleDefinition {
     /* ********************* constructor ******************** */
 
     public WebPlaceholderModuleDefinition(ModuleDefinition parent, String name) {
-        Assert.notNull(parent);
-        Assert.notNull(name);
+        Assert.notNull(parent, "parent cannot be null");
+        Assert.notNull(name, "name cannot be null");
         this.parent = parent;
         this.name = name;
         this.parent.addChildModuleDefinition(this);

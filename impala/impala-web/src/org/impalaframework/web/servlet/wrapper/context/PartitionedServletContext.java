@@ -65,7 +65,7 @@ public class PartitionedServletContext extends
      */
     protected String getWriteKeyToUse(String name) {
 
-        Assert.notNull(name);
+        Assert.notNull(name, "name cannot be null");
         return getWebAttributeQualifier().getQualifiedAttributeName(name, getApplicationId(), getModuleName());
     }
     

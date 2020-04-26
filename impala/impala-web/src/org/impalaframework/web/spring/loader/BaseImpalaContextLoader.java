@@ -14,7 +14,6 @@
 
 package org.impalaframework.web.spring.loader;
 
-import java.lang.reflect.Method;
 import java.util.Arrays;
 
 import javax.servlet.ServletContext;
@@ -33,7 +32,6 @@ import org.impalaframework.module.spi.Application;
 import org.impalaframework.module.spi.ApplicationManager;
 import org.impalaframework.spring.module.SpringModuleUtils;
 import org.impalaframework.util.ObjectUtils;
-import org.impalaframework.util.ReflectionUtils;
 import org.impalaframework.web.WebConstants;
 import org.impalaframework.web.bootstrap.ServletContextLocationsRetriever;
 import org.impalaframework.web.bootstrap.WebContextLocationResolver;
@@ -88,57 +86,23 @@ public abstract class BaseImpalaContextLoader extends ContextLoader implements S
      * for loading the module metadata. It then instantiates the application context and returns it for further processing by
      * <code>ContextLoader</code>.
      */
-    @Override
     protected WebApplicationContext createWebApplicationContext(ServletContext servletContext, ApplicationContext parent)
             throws BeansException {
         
-        final WebApplicationContext newContext;
-    	
-        //this method is supported for 3.1 and above
-        Method configurableMethod = ReflectionUtils.findMethod(super.getClass(), "configureAndRefreshWebApplicationContext", new Class[]{
-    		ConfigurableWebApplicationContext.class,
-    		ServletContext.class
-    	});
-    	
-        if (configurableMethod != null) {
+        final WebApplicationContext newContext = super.createWebApplicationContext(servletContext);
         	
-        	newContext = super.createWebApplicationContext(servletContext);
+    	//use the configure method to do configuration on the web application context
+    	if (newContext instanceof ConfigurableWebApplicationContext) {
+    		
+			ConfigurableWebApplicationContext wac = (ConfigurableWebApplicationContext) newContext;
+        	configureAndRefreshWebApplicationContext(wac, servletContext);
         	
-        	//use the configure method to do configuration on the web application context
-        	if (newContext instanceof ConfigurableWebApplicationContext) {
-        		
-	        	@SuppressWarnings("resource")
-				ConfigurableWebApplicationContext wac = (ConfigurableWebApplicationContext) newContext;
-		    	if (configurableMethod != null) {
-		    		
-		    		ReflectionUtils.invokeMethod(configurableMethod, this, new Object[]{
-		    			parent, 
-		    			servletContext
-		    		});
-		    	}
-		    	
-		    	wac.setParent(parent);
-		    	wac.setServletContext(servletContext);
-        	}
-	    	
-        } else {
-        	
-        	//for 3.0 and below
-        	newContext = legacyCreateContext(servletContext, parent);
-        }
+	    	wac.setParent(parent);
+	    	wac.setServletContext(servletContext);
+    	}
         
         return newContext;
     }
-
-    /**
-     * For Spring 3.0 and below, falls back to the old method of creating a parent application context
-     */
-	@SuppressWarnings("deprecation")
-	private WebApplicationContext legacyCreateContext(ServletContext servletContext, ApplicationContext parent) {
-		final WebApplicationContext newContext;
-		newContext = super.createWebApplicationContext(servletContext, parent);
-		return newContext;
-	}
     
     /**
      * Overrides the empty {@link ContextLoader#customizeContext(ServletContext, ConfigurableWebApplicationContext)}

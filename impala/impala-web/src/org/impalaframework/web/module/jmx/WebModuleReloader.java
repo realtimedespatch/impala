@@ -63,7 +63,7 @@ public class WebModuleReloader implements ServletContextAware {
     public String unloadModules() {
         
         try {
-			Assert.notNull(servletContext);
+			Assert.notNull(servletContext, "servletContext cannot be null");
 
 			ModuleManagementFacade facade = getFacade();
 			ModuleDefinitionSource source = getSource();

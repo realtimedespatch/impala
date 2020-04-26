@@ -25,7 +25,7 @@ public class WebContextStarter implements ContextStarter {
 
     public ApplicationContext startContext(List<String> locations) {
         
-        Assert.notNull(locations);
+        Assert.notNull(locations, "locations cannot be null");
         
         final String[] locationArray = locations.toArray(new String[locations.size()]);
         for (int i = 0; i < locationArray.length; i++) {

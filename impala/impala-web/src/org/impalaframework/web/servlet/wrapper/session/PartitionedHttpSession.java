@@ -56,7 +56,7 @@ public class PartitionedHttpSession extends DelegatingHttpSession {
 
     @Override
     public Object getAttribute(String name) {
-        Assert.notNull(name);
+        Assert.notNull(name, "name cannot be null");
         final String qualifiedAttributeName = webAttributeQualifier.getQualifiedAttributeName(name, applicationId, moduleName);
         return super.getAttribute(qualifiedAttributeName);
     }
@@ -71,7 +71,7 @@ public class PartitionedHttpSession extends DelegatingHttpSession {
     @Override
     public void removeAttribute(String name) {
         //FIXME test and raise ticket
-        Assert.notNull(name);
+        Assert.notNull(name, "name cannot be null");
         final String qualifiedAttributeName = webAttributeQualifier.getQualifiedAttributeName(name, applicationId, moduleName);
         super.removeAttribute(qualifiedAttributeName);
     }
