@@ -15,12 +15,9 @@
 package org.impalaframework.urlmapping.root;
 
 import org.impalaframework.facade.Impala;
+import org.impalaframework.interactive.InteractiveTestRunner;
 import org.impalaframework.interactive.definition.source.TestDefinitionSource;
 import org.impalaframework.module.RootModuleDefinition;
-import org.impalaframework.interactive.InteractiveTestRunner;
-
-import org.impalaframework.urlmapping.root.BaseIntegrationTest;
-import org.impalaframework.urlmapping.root.MessageService;
 
 
 
