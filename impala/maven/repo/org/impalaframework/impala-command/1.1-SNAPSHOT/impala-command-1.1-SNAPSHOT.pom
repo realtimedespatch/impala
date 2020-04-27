@@ -1,0 +1,29 @@
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<groupId>org.impalaframework</groupId>
+<artifactId>impala-command</artifactId>
+<version>1.1-SNAPSHOT</version>
+<packaging>jar</packaging>
+<name>impala-command</name>
+<description>impala-command</description>
+<url>http://code.google.com/p/impala/</url>
+<licenses>
+  <license>
+    <name>The Apache Software License, Version 2.0</name>
+    <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    <distribution>repo</distribution>
+  </license>
+</licenses>
+<scm>
+  <connection>scm:svn:http://impala.googlecode.com/svn/trunk</connection>
+  <url>http://code.google.com/p/impala/source/browse/trunk</url>
+</scm>
+<developers>
+  <developer>
+    <id>phil</id>
+    <name>Phil Zoio</name>
+    <email>philzoio@realsolve.co.uk</email>
+    <url>http://impalablog.blogspot.com/</url>
+  </developer>
+</developers>
+</project>
