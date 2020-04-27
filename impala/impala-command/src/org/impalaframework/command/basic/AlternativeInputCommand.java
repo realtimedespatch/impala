@@ -13,6 +13,7 @@
  */
 package org.impalaframework.command.basic;
 
+import java.util.Arrays;
 import java.util.Map;
 
 import org.impalaframework.command.framework.Command;
@@ -40,6 +41,7 @@ public class AlternativeInputCommand implements Command {
         // no point executing this command unless we have two or more
         // alternatives
         Assert.isTrue(alternatives.length > 1, "alternatives cannot be empty");
+        Arrays.sort(alternatives);
         this.alternatives = alternatives;
     }
 
