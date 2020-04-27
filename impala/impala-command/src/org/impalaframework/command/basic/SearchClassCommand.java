@@ -40,7 +40,7 @@ public class SearchClassCommand implements Command {
 
     public boolean execute(CommandState commandState) {
 
-        Assert.notNull(classDirectories);
+        Assert.notNull(classDirectories, "classDirectories cannot be null");
 
         while (className == null) {
 

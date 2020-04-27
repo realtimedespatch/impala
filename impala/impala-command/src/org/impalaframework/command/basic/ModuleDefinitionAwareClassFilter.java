@@ -34,7 +34,7 @@ public class ModuleDefinitionAwareClassFilter extends DefaultClassFilter impleme
 
     @Override
     public void setRootPath(File file) {
-        Assert.notNull(file);
+        Assert.notNull(file, "file cannot be null");
         try {
             this.rootFile = file;
             this.rootCanonicalPath = file.getCanonicalPath();

@@ -113,7 +113,7 @@ public class CommandInfo {
 
 	public String validate(String input) {
 		// note that input will not be called with a non-null, untrimmed value
-		Assert.notNull(input);
+		Assert.notNull(input, "input cannot be null");
 		return null;
 	}
 

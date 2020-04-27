@@ -36,10 +36,10 @@ public class AlternativeInputCommand implements Command {
 
     public AlternativeInputCommand(String[] alternatives) {
         super();
-        Assert.notNull(alternatives);
+        Assert.notNull(alternatives, "alternatives cannot be null");
         // no point executing this command unless we have two or more
         // alternatives
-        Assert.isTrue(alternatives.length > 1);
+        Assert.isTrue(alternatives.length > 1, "alternatives cannot be empty");
         this.alternatives = alternatives;
     }
 
@@ -47,9 +47,9 @@ public class AlternativeInputCommand implements Command {
         Map<String, CommandPropertyValue> properties = commandState.getProperties();
         CommandPropertyValue classHolder = properties.get("selection");
 
-        Assert.notNull(classHolder);
+        Assert.notNull(classHolder, "classHolder cannot be null");
         String selectedValue = classHolder.getValue();
-        Assert.notNull(selectedValue);
+        Assert.notNull(selectedValue, "selectedValue cannot be null");
 
         // this has been validated, so should not be negative
         selectedAlternative = alternatives[Integer.parseInt(selectedValue) - 1];

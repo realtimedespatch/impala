@@ -22,7 +22,7 @@ public class CommandPropertyValue {
 
     public CommandPropertyValue(String input, String description) {
         super();
-        Assert.notNull(input);
+        Assert.notNull(input, "input cannot be null");
         this.value = input;
         this.description = description;
     }

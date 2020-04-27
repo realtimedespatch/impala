@@ -49,7 +49,7 @@ public class ClassFindCommand implements Command {
 
     public boolean execute(CommandState commandState) {
 
-        Assert.notNull(classDirectories);
+        Assert.notNull(classDirectories, "classDirectories cannot be null");
 
         Map<String, CommandPropertyValue> properties = commandState.getProperties();
         CommandPropertyValue classHolder = properties.get("class");
@@ -129,8 +129,8 @@ public class ClassFindCommand implements Command {
 
         public ClassFindFileRecurseHandler(String searchText) {
             super();
-            Assert.notNull(searchText);
-            Assert.isTrue(searchText.trim().length() >= 3);
+            Assert.notNull(searchText, "searchText cannot be null");
+            Assert.isTrue(searchText.trim().length() >= 3, "searchText length must be at least 3");
 
             int lastDotIndex = searchText.lastIndexOf('.');
             if (lastDotIndex >= 0) {

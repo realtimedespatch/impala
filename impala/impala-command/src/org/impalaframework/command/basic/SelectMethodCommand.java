@@ -33,7 +33,7 @@ public class SelectMethodCommand implements Command {
 
     public SelectMethodCommand(Class<?> testClass) {
         super();
-        Assert.notNull(testClass);
+        Assert.notNull(testClass, "testClass cannot be null");
         this.testClass = testClass;
     }
 
