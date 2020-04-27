@@ -33,8 +33,8 @@ public class ModuleLocationsResourceLoader implements SpringLocationsResourceLoa
     }
 
     public Resource[] getSpringLocations(ModuleDefinition moduleDefinition, ClassLoader classLoader) {
-        Assert.notNull(moduleDefinition);
-        Assert.notNull(resourceLoader);
+        Assert.notNull(moduleDefinition, "moduleDefinition cannot be null");
+        Assert.notNull(resourceLoader, "resourceLoader cannot be null");
 
         List<String> configLocations = moduleDefinition.getConfigLocations();
         if (configLocations.isEmpty()) {
