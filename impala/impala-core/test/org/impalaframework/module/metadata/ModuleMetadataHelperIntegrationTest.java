@@ -98,6 +98,7 @@ public class ModuleMetadataHelperIntegrationTest extends TestCase {
         Collection<String> capabilities = helper.getCapabilities();
         System.out.println(capabilities);
         assertEquals("four,one,three", StringUtils.collectionToCommaDelimitedString(capabilities));
+        assertTrue(helper.hasCapability("one"));
         
         assertEquals("impala-core,sample-module1,sample-module2,sample-module3,sample-module4", StringUtils.collectionToCommaDelimitedString(helper.getLoadedModuleNames()));
     }

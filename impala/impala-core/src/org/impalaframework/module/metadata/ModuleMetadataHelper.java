@@ -55,6 +55,14 @@ public class ModuleMetadataHelper implements ApplicationAware {
     }
     
     /**
+     * Returns true if named capability is present.
+     */
+    public boolean hasCapability(String capability) {
+    	Collection<String> capabilities = getCapabilities();
+		return capabilities.contains(capability);
+    }
+    
+    /**
      * Returns the names of loaded modules, sorted in alphabetical order
      */
     public Collection<String> getLoadedModuleNames() {
