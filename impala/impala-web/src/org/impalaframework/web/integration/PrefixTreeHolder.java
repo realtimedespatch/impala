@@ -100,12 +100,12 @@ public class PrefixTreeHolder {
         return trie.findContainedNode(requestURI);
     }
 
-    ConcurrentRadixTree<ModuleNameWithPath> getTrie() {
-        return trie;
+    public Map<String, List<String>> getContributions() {
+        return Collections.unmodifiableMap(contributions);
     }
 
-    Map<String, List<String>> getContributions() {
-        return Collections.unmodifiableMap(contributions);
+    ConcurrentRadixTree<ModuleNameWithPath> getTrie() {
+        return trie;
     }
     
 }
