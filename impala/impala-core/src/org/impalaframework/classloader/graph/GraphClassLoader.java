@@ -262,6 +262,13 @@ public class GraphClassLoader extends ClassLoader implements ModularClassLoader 
         return loadCustomClass(className, tryDelegate, false);
     }
     
+    /**
+     * Returns the name of the module for which this applies.
+     */
+    public final String getModuleName() {
+        return moduleDefinition.getName();
+    }
+    
     /* **************************** protected methods ***************************** */
 
     public ClassRetriever getClassRetriever() {
@@ -372,10 +379,6 @@ public class GraphClassLoader extends ClassLoader implements ModularClassLoader 
     
     protected Enumeration<URL> getLocalResources(String name) {
         return classRetriever.findResources(name);
-    }
-    
-    protected final String getModuleName() {
-        return moduleDefinition.getName();
     }
     
     protected ClassLoaderOptions getOptions() {
