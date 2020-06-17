@@ -9,7 +9,7 @@
 
     <property name = "project.list" value = "impala-build,impala-core,impala-command,impala-jmx,impala-web,impala-interactive"/>
     <property name = "maven.artifacts" value = "${project.list}"/>
-    <property name = "deployable.project.list" value = "${maven.artifacts},impala-osgi,impala-osgi-extender,impala-osgi-test"/>   
+    <property name = "deployable.project.list" value = "${maven.artifacts}"/>   
     <property name = "all.project.list" value = "${deployable.project.list},sample-module1,sample-module2,sample-module3,sample-module4"/>
     <property name = "maven.organisation" value = "org.impalaframework"/>
     <import file="shared-build.xml" />

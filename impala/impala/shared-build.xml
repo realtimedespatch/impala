@@ -22,10 +22,6 @@
     
     <target name = "shared:fixcrlf">
         <antforeach antfile="build.xml" dir = "${workspace.root}" projects = "${project.list}" target = "project:fixcrlf" inheritall = "false"/>
-    </target>       
-    
-    <target name = "shared:osgi-manifest">
-        <antforeach antfile="build.xml" dir = "${workspace.root}" projects = "${project.list}" target = "osgi:manifest" inheritall = "false"/>
     </target>   
     
     <target name = "shared:get">

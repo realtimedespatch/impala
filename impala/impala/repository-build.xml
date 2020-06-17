@@ -14,14 +14,6 @@
         </copy>
     </target>
     
-    <target name = "repository:include-osgi">
-        <property name = "impala.fetch.excludes" value="**/*sample*, **/*javadoc.jar"/>
-    </target>
-    
-    <target name = "repository:exclude-osgi">
-        <property name = "impala.fetch.excludes" value="**/*sample*, **/*javadoc.jar, **/*osgi*"/>
-    </target>
-    
     <target name = "repository:fetch-impala-from-repository" if = "external.repository.dir">
         <property name = "external.repository.location" location="${external.repository.dir}"/>
         <echo>External repository directory: ${external.repository.location}</echo>
@@ -32,6 +24,7 @@
     </target>
     
     <target name = "repository:fetch-impala-from-lib">
+        <property name = "impala.fetch.excludes" value="**/*sample*, **/*javadoc.jar"/>
         <copy todir="${main.lib.dir}" flatten="true" overwrite="true">
             <fileset dir = "${impala.home}/lib" includes = "**/*.jar" excludes = "${impala.fetch.excludes}"/>
         </copy>
@@ -48,7 +41,6 @@
             destdir = "${maven.repo.dir}"/>
     </target>
     
-    <target name = "repository:fetch-impala" depends = "repository:exclude-osgi, repository:fetch-impala-from-lib, repository:fetch-impala-from-repository"/>
-    <target name = "repository:fetch-impala-osgi" depends = "repository:include-osgi, repository:fetch-impala-from-lib, repository:fetch-impala-from-repository"/>
+    <target name = "repository:fetch-impala" depends = "repository:fetch-impala-from-lib, repository:fetch-impala-from-repository"/>
    
 </project>

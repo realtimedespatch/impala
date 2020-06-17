@@ -22,7 +22,6 @@
                 includes="
                 *.xml
                 *.properties
-                osgi/*
                 scripts/*
                 mvn/*"
                 
