@@ -38,16 +38,28 @@ public class DelegatingHttpSession implements HttpSession {
     }
 
     public Object getAttribute(String name) {
-        return realSession.getAttribute(name);
+        try {
+			return realSession.getAttribute(name);
+		} catch (IllegalStateException e) {
+			return null;
+		}
     }
 
     @SuppressWarnings("unchecked")
     public Enumeration<String> getAttributeNames() {
-        return realSession.getAttributeNames();
+        try {
+			return realSession.getAttributeNames();
+		} catch (IllegalStateException e) {
+			return null;
+		}
     }
 
     public long getCreationTime() {
-        return realSession.getCreationTime();
+        try {
+			return realSession.getCreationTime();
+		} catch (IllegalStateException e) {
+			return 0L;
+		}
     }
 
     public String getId() {
@@ -55,7 +67,11 @@ public class DelegatingHttpSession implements HttpSession {
     }
 
     public long getLastAccessedTime() {
-        return realSession.getLastAccessedTime();
+        try {
+            return realSession.getLastAccessedTime();
+		} catch (IllegalStateException e) {
+			return 0L;
+		}
     }
 
     public int getMaxInactiveInterval() {
@@ -73,12 +89,20 @@ public class DelegatingHttpSession implements HttpSession {
 
     @SuppressWarnings("deprecation")
     public Object getValue(String name) {
-        return realSession.getValue(name);
+        try {
+			return realSession.getValue(name);
+		} catch (IllegalStateException e) {
+			return null;
+		}
     }
 
     @SuppressWarnings("deprecation")
     public String[] getValueNames() {
-        return realSession.getValueNames();
+        try {
+			return realSession.getValueNames();
+		} catch (IllegalStateException e) {
+			return new String[0];
+		}
     }
 
     public void invalidate() {
@@ -86,7 +110,11 @@ public class DelegatingHttpSession implements HttpSession {
     }
 
     public boolean isNew() {
-        return realSession.isNew();
+        try {
+			return realSession.isNew();
+		} catch (IllegalStateException e) {
+			return false;
+		}
     }
 
     @SuppressWarnings("deprecation")
