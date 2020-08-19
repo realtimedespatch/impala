@@ -73,8 +73,9 @@ public class StateProtectingHttpSession extends PartitionedHttpSession implement
         
         Object attribute = super.getAttribute(name);
         
-        if (attribute == null) 
+        if (attribute == null) {
             return null;
+        }
         
         ClassLoader attributeClassLoader = attribute.getClass().getClassLoader();
         
