@@ -125,9 +125,26 @@ public abstract class CollectionStringUtils {
         return parseMap(mapString, delimiters, objectConverter);
     }
 
+	/**
+	 * As in {@link #parseMapFromString(String)}, but with assumption that keys are
+	 * {@link String}s and values are {@link Long} instances.
+	 */
+    public static Map<String, Long> parseStringLongMap(String mapString) {
+        return parseStringLongMap(mapString, ",\n");
+    }
+
+	/**
+	 * As in {@link #parseMapFromString(String)}, but with assumption that keys are
+	 * {@link String}s and values are {@link Long} instances.
+	 */
+    public static Map<String, Long> parseStringLongMap(String mapString, String delimiters) {
+        return parseMap(mapString, delimiters, longConverter);
+    }
     
-    private static <T extends Object> Map<String,T> parseMap(String mapString,
-            String delimiters, ValueConverter<T> valueConverter) {
+    private static <T extends Object> Map<String,T> parseMap(
+    		String mapString,
+            String delimiters, 
+            ValueConverter<T> valueConverter) {
         Assert.notNull(mapString, "map string cannot be null");
         Assert.notNull(delimiters, "delimiters cannot be null");
         

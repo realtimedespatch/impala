@@ -34,6 +34,12 @@ public class CollectionStringUtilsTest extends TestCase {
     private void compareTokenize(String expected, String initial) {
         assertEquals(Arrays.asList(expected.split(":")), Arrays.asList(CollectionStringUtils.tokenize(initial, ",\n")));
     }
+    
+    public void testParseStringLongMap() {
+        String input = " name1 = 1 \n name2=3, name3 = 0";
+        Map<String, Long> map = CollectionStringUtils.parseStringLongMap(input);
+        assertEquals(Long.valueOf(3), map.get("name2"));
+    }
 
     public void testParsePropertiesFromString() {
         String input = " name1 = 1 \n name2= value 2, name3 = value3 ";
