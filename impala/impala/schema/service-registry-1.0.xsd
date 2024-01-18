@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<xsd:schema xmlns="http://www.impalaframework.org/schema/service"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:beans="http://www.springframework.org/schema/beans"
+		targetNamespace="http://www.impalaframework.org/schema/service"
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified">
+
+	<xsd:import namespace="http://www.springframework.org/schema/beans"/>
+	
+	<xsd:element name="parent">
+		<xsd:annotation>
+			<xsd:documentation>
+	Used to create a local reference to a bean defined in a parent application context.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="id" type="xsd:ID"/>
+			<xsd:attribute name="parentBeanName" type="xsd:string" use="optional"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="optional">
+		<xsd:annotation>
+			<xsd:documentation>
+	The named bean element is used to inject a named delegate bean which may or may not be present in the current application context.
+	If not present, then falls back to the fallback bean, which must be present in the application context (1.0.2 onwards).
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="id" type="xsd:ID"/>
+			<xsd:attribute name="beanName" type="xsd:string" use="required"/>
+			<xsd:attribute name="fallback" type="xsd:string" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="named-bean">
+		<xsd:annotation>
+			<xsd:documentation>
+	The named bean element is used to inject a named delegate bean which is already accessible from the current application context.
+	The 'beanName' attribute is mandatory as it is used to look up the bean. 
+	If 'singletonAware' is set to 'true', then the named bean's FactoryBean will be aware of the delegate bean's singleton status.
+	If 'proxied' is set to true, then bean created using this element will be a proxy of the delegate bean. This allows you, for example, 
+	to create a singleton proxy of a prototype delegate bean. In other words, clients of the delegate bean can inject the proxy, and 
+	treat the reference as a singleton, even though behind the scenes there is actually a proxy at work. When 'proxyTypes' is specified, 
+	then an interface-based proxy is created using the specified proxy types. If not specified, then a class-based proxy using CGLIB is created.
+	Note that if 'proxyTypes' is set, then 'proxied' is implicitly true. Otherwise it is implicitly false.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="id" type="xsd:ID"/>
+			<xsd:attribute name="beanName" type="xsd:string" use="required"/>
+			<xsd:attribute name="singletonAware" type="truefalse" use="optional"/>
+			<xsd:attribute name="proxied" type="truefalse" use="optional"/>
+			<xsd:attribute name="proxyTypes" type="xsd:string" use="optional"/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="export">
+		<xsd:annotation>
+			<xsd:documentation>
+	Used to export an individual Spring bean as an Impala service. 
+	- beanName is the name of the bean being exported, resolved used applicationContext.getBean(beanName)
+	- exportName is the name against which the bean is registered in the Impala service registry (enabling name based lookups using the import element)
+	- exportTypes is a comma separated list of types against which the bean will be exported (enabling typed based lookups using the import element)
+	- attributes is a set of attributes pairs, separated by default by line breaks or commas, with name and value separated by equals 
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="id" type="xsd:ID"/>
+			<xsd:attribute name="beanName" type="xsd:string" use="required"/>
+			<xsd:attribute name="exportName" type="xsd:string" use="optional"/>
+			<xsd:attribute name="exportTypes" type="xsd:string" use="optional"/>
+			<xsd:attribute name="attributes" type="xsd:string" use="optional"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="import">
+		<xsd:annotation>
+			<xsd:documentation>
+	Used to import an individual Spring bean from the Impala service registry. 
+	Basically, there are three ways of importing beans. First, by name, corresponding with a name used to register a bean into the service
+	registry. Second, by type, corresponding with types used to register a bean in the service registry.
+	Third, by filter, in which case the service must have been exported using attributes which match the filter expression.
+	
+	The following attributes apply:
+	- filterExpression: if not null, then used to look up the service as an entry which matches the filter
+	- exportName: if not null, and filterExpression is null, then used to look up service as a named entry
+	- exportTypes: if both filterExpression and exportName are null, then used to look up service as a typed entry
+	Even if filterExpression or exportName is specified, then if exportTypes is present it is used to limit the candidate services to 
+	those which were exported using all of the specified set of export types. 
+	- proxyTypes: must be present if exportTypes is not. If present, then the proxyTypes are used to create the proxy to the service
+	which is passed to client users of the service. If not present, then the export types (from the exportTypes attribute)
+	are also used as the proxy types.
+	- proxyOptions: can be used optionally to override the proxy related settings in impala.properties, for a single bean.
+	Example: 'log.warning.no.service=true,allow.no.service=true,set.context.classloader=false,
+	          missing.service.retry.count=2,missing.service.retry.interval=3'
+	Note that the property name is the same as the corresponding name in impala.properties, with the 'proxy.' prefix removed.	   
+		</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="id" type="xsd:ID"/>
+			<xsd:attribute name="exportName" type="xsd:string" use="optional"/>
+			<xsd:attribute name="exportTypes" type="xsd:string" use="optional"/>
+			<xsd:attribute name="proxyTypes" type="xsd:string" use="optional"/>
+			<xsd:attribute name="filterExpression" type="xsd:string" use="optional"/>
+			<xsd:attribute name="proxyOptions" type="xsd:string" use="optional"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="list">
+		<xsd:annotation>
+			<xsd:documentation>
+	Used to create a java.util.List which is backed by Impala service registry entries.
+	
+	The following attributes apply:
+	- filterExpression: used to filter services which are eligible for adding to the list
+	- exportTypes: if exportTypes is present it is used to limit the candidate services to 
+	those which were exported using all of the specified set of export types. 
+	- proxyTypes: if present, then the proxyTypes are used to create the proxy to the service
+	for each entry in the map. If not present, then the export types (from the exportTypes attribute)
+	are also used as the proxy types. If neither is present, then Impala will attempt to create a
+	CGLIB proxy of the class.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="id" type="xsd:ID"/>
+			<xsd:attribute name="filterExpression" type="xsd:string" use="required"/>
+			<xsd:attribute name="exportTypes" type="xsd:string" use="optional"/>
+			<xsd:attribute name="proxyTypes" type="xsd:string" use="optional"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="set">
+		<xsd:annotation>
+			<xsd:documentation>
+	Used to create a java.util.Set which is backed by Impala service registry entries.
+	
+	The following attributes apply:
+	- filterExpression: used to filter services which are eligible for adding to the list
+	- exportTypes: if exportTypes is present it is used to limit the candidate services to 
+	those which were exported using all of the specified set of export types. 
+	- proxyTypes: if present, then the proxyTypes are used to create the proxy to the service
+	for each entry in the map. If not present, then the export types (from the exportTypes attribute)
+	are also used as the proxy types. If neither is present, then Impala will attempt to create a
+	CGLIB proxy of the class.
+	
+	Note that the implementation honours the java.util.Set contract - duplicates
+	of the contributed object will not appear in the set. It also does not provide
+	any guarrantees on the ordering of contributed entries.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="id" type="xsd:ID"/>
+			<xsd:attribute name="filterExpression" type="xsd:string" use="required"/>
+			<xsd:attribute name="exportTypes" type="xsd:string" use="optional"/>
+			<xsd:attribute name="proxyTypes" type="xsd:string" use="optional"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="map">
+		<xsd:annotation>
+			<xsd:documentation>
+	Used to create a java.util.Map which is backed by Impala service registry entries.
+	
+	The following attributes apply:
+	- filterExpression: used to filter services which are eligible for adding to the list
+	- exportTypes: if exportTypes is present it is used to limit the candidate services to 
+	those which were exported using all of the specified set of export types. 
+	- proxyTypes: if present, then the proxyTypes are used to create the proxy to the service
+	for each entry in the map. If not present, then the export types (from the exportTypes attribute)
+	are also used as the proxy types. If neither is present, then Impala will attempt to create a
+	CGLIB proxy of the class.
+	- mapKey: the service attribute used as the key for the map. By default this will be 'mapkey'
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="id" type="xsd:ID"/>
+			<xsd:attribute name="filterExpression" type="xsd:string" use="required"/>
+			<xsd:attribute name="exportTypes" type="xsd:string" use="optional"/>
+			<xsd:attribute name="proxyTypes" type="xsd:string" use="optional"/>
+			<xsd:attribute name="mapKey" type="xsd:string" use="optional"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="export-array">
+		<xsd:annotation>
+			<xsd:documentation>
+	Used to export an array of beans to the service registry. Beans will be exported by name.
+	- beanNames: the names of the beans being exported
+	- exportNames: the corresponding names against which the exported beans will be registered in the service registry.
+	Note that beans are not exported by any explicit type (as in the export 'exportTypes' attributes), and not exported
+	using any explicit filter. This means that when using this form of export, bean lookup will typically be using the 
+	'import' elemnt with the 'exportName' specified.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="id" type="xsd:ID"/>
+			<xsd:attribute name="beanNames" type="xsd:string" use="required"/>
+			<xsd:attribute name="exportNames" type="xsd:string" use="optional"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="auto-export">
+		<xsd:annotation>
+			<xsd:documentation>
+	Used to automatically export beans to the service registry. It checks for the presence in beans in the parent (and dependent) application
+	contexts (that is, application contexts for parent and dependent modules) for beans which are service endpoints, created for example using
+	the 'import' element. It then checks each bean in the current application context, and if its bean name corresponds with the endpoint's 
+	export name, it exports the bean using the current bean name as the export name.
+	
+	In this way, the 'auto-export' element provides a very easy way to contribute an implementation for a service endpoint defined in a parent
+	application context.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="id" type="xsd:ID"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:simpleType name="truefalse">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="true"/>
+			<xsd:enumeration value="false"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>

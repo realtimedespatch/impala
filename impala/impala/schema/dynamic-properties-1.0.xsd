@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<xsd:schema xmlns="http://www.impalaframework.org/schema/dynamicproperties"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:beans="http://www.springframework.org/schema/beans"
+		targetNamespace="http://www.impalaframework.org/schema/dynamicproperties"
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified">
+
+	<xsd:import namespace="http://www.springframework.org/schema/beans"/>
+	
+	<xsd:element name="boolean">
+		<xsd:annotation>
+			<xsd:documentation>
+Shortcut for creating an instance of BooleanPropertyValue which can be injected into another bean and 
+provide a mechanism for a dynamically backed boolean configuration value.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attributeGroup ref="propertyAttributes"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="date">
+		<xsd:annotation>
+			<xsd:documentation>
+Shortcut for creating an instance of DatePropertyValue which can be injected into another bean and 
+provide a mechanism for a dynamically backed java.util.Date configuration value.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attributeGroup ref="propertyAttributes"/>
+			<xsd:attribute name="pattern" type="xsd:string" use="required">				
+			<xsd:annotation>
+				<xsd:documentation><![CDATA[
+The date pattern, used by java.text.SimpleDateFormat to convert the underlying property text from a String value into a java.util.Date instance.			
+				]]></xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="double">
+		<xsd:annotation>
+			<xsd:documentation>
+Shortcut for creating an instance of DoublePropertyValue which can be injected into another bean and 
+provide a mechanism for a dynamically backed double configuration value.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attributeGroup ref="propertyAttributes"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="float">
+		<xsd:annotation>
+			<xsd:documentation>
+Shortcut for creating an instance of FloatPropertyValue which can be injected into another bean and 
+provide a mechanism for a dynamically backed float configuration value.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attributeGroup ref="propertyAttributes"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="int">
+		<xsd:annotation>
+			<xsd:documentation>
+Shortcut for creating an instance of IntPropertyValue which can be injected into another bean and 
+provide a mechanism for a dynamically backed int configuration value.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attributeGroup ref="propertyAttributes"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="long">
+		<xsd:annotation>
+			<xsd:documentation>
+Shortcut for creating an instance of LongPropertyValue which can be injected into another bean and 
+provide a mechanism for a dynamically backed long configuration value.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attributeGroup ref="propertyAttributes"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="string">
+		<xsd:annotation>
+			<xsd:documentation>
+Shortcut for creating an instance of StringPropertyValue which can be injected into another bean and 
+provide a mechanism for a dynamically backed java.lang.String configuration value.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attributeGroup ref="propertyAttributes"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:attributeGroup name="propertyAttributes">
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="name" type="xsd:string" use="required">				
+			<xsd:annotation>
+				<xsd:documentation><![CDATA[
+The name of the property to be extracted using the backing org.impalaframework.config.PropertySource's getValue(String name) method.
+For example, if the PropertySource uses a backing java.util.Properties instance, the name provided will result in the invocation
+of Properties.getProperty(name), with name passed in as an argument.
+				]]></xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="defaultValue" type="xsd:string" use="optional">				
+			<xsd:annotation>
+				<xsd:documentation><![CDATA[
+The default value for the property. Note that the value specified needs to be compatible with the dynamic property type.
+For example, a value such as 'true' would not be type compatible with the 'float' element, but would be for the 'boolean'
+element.
+				]]></xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="propertySource" type="xsd:string" use="required">				
+			<xsd:annotation>
+				<xsd:documentation><![CDATA[
+The org.impalaframework.config.PropertySource implementation used to back the property value.			
+				]]></xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:attributeGroup>
+	
+</xsd:schema>
