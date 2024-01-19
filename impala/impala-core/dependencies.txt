@@ -16,3 +16,4 @@ main from org.slf4j:jcl-over-slf4j:1.6.6
 test from junit:junit:3.8.2
 test from org.easymock:easymock:2.5.1
 test from org.easymock:easymockclassextension:2.4
+
