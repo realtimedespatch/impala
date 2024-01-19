@@ -2,10 +2,12 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" output="testbin" path="test"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/impala-core"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/jmx/mx4j-3.0.2.jar" sourcepath="/impala-repository/jmx/mx4j-3.0.2-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/jmx/mx4j-impl-3.0.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/jmx/mx4j-tools-3.0.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -3,16 +3,20 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" output="testbin" path="test"/>
 	<classpathentry kind="src" path="resources"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/impala-core"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/impala-core"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/jsp-api-2.1.jar" sourcepath="/impala-repository/jetty/jsp-api-2.1-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/servlet-api-2.5.jar" sourcepath="/impala-repository/jetty/servlet-api-2.5-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-webmvc-4.3.26.RELEASE.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/jasper-6.0.20.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/jasper-el-6.0.20.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/jasper-jdt-6.0.20.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/jetty-6.1.21.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/jetty-util-6.1.21.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/jetty/juli-6.0.20.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-webmvc-5.3.30.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
