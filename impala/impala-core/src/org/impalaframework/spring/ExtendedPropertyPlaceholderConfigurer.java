@@ -18,18 +18,18 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.impalaframework.exception.ConfigurationException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.impalaframework.exception.ConfigurationException;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
-import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.util.Assert;
 
-public abstract class ExtendedPropertyPlaceholderConfigurer extends PropertyPlaceholderConfigurer {
+public abstract class ExtendedPropertyPlaceholderConfigurer extends PropertySourcesPlaceholderConfigurer {
     
     private static final Log logger = LogFactory.getLog(ExtendedPropertyPlaceholderConfigurer.class);
 

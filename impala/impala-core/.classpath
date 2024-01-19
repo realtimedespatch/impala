@@ -3,23 +3,27 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" output="testbin" path="test"/>
 	<classpathentry kind="src" path="resources"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/test/junit-3.8.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/main/cglib-nodep-2.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/main/jcl-over-slf4j-1.6.6.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/test/easymock-2.5.1.jar" sourcepath="/impala-repository/test/easymock-2.5.1-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/test/easymockclassextension-2.4.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-aop-4.3.26.RELEASE.jar" sourcepath="/impala-repository/main/spring-aop-4.3.26.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-beans-4.3.26.RELEASE.jar" sourcepath="/impala-repository/main/spring-beans-4.3.26.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-context-4.3.26.RELEASE.jar" sourcepath="/impala-repository/main/spring-context-4.3.26.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-context-support-4.3.26.RELEASE.jar" sourcepath="/impala-repository/main/spring-context-4.3.26.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-core-4.3.26.RELEASE.jar" sourcepath="/impala-repository/main/spring-core-4.3.26.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-expression-4.3.26.RELEASE.jar" sourcepath="/impala-repository/main/spring-expression-4.3.26.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-web-4.3.26.RELEASE.jar" sourcepath="/impala-repository/main/spring-web-4.3.26.RELEASE-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-webmvc-4.3.26.RELEASE.jar" sourcepath="/impala-repository/main/spring-webmvc-4.3.26.RELEASE-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/main/aopalliance-1.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/main/log4j-1.2.17.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/main/slf4j-api-1.6.6.jar"/>
 	<classpathentry exported="true" kind="lib" path="/impala-repository/main/slf4j-log4j12-1.6.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-aop-5.3.30.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-beans-5.3.30.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-context-5.3.30.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-context-support-5.3.30.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-core-5.3.30.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-expression-5.3.30.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-web-5.3.30.jar"/>
+	<classpathentry exported="true" kind="lib" path="/impala-repository/main/spring-webmvc-5.3.30.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

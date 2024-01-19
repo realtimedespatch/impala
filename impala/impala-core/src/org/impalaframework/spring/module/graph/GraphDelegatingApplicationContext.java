@@ -29,6 +29,7 @@ import org.impalaframework.util.ReflectionUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
@@ -359,9 +360,50 @@ public class GraphDelegatingApplicationContext implements ApplicationContext, Be
         return parent.getAutowireCapableBeanFactory();
     }
     
+/* ************************ Methods added to with 5.3.0 ******************** */
+    
+	@Override
+	public <T> ObjectProvider<T> getBeanProvider(Class<T> requiredType, boolean allowEagerInit) {
+		return parent.getBeanProvider(requiredType, allowEagerInit);
+	}
+
+	@Override
+	public <T> ObjectProvider<T> getBeanProvider(ResolvableType requiredType, boolean allowEagerInit) {
+		return parent.getBeanProvider(requiredType, allowEagerInit);
+	}
+
+	@Override
+	public String[] getBeanNamesForType(ResolvableType type, boolean includeNonSingletons, boolean allowEagerInit) {
+		return parent.getBeanNamesForType(type, includeNonSingletons, allowEagerInit);
+	}
+
+	@Override
+	public <A extends Annotation> A findAnnotationOnBean(String beanName, Class<A> annotationType,
+			boolean allowFactoryBeanInit) throws NoSuchBeanDefinitionException {
+		return parent.findAnnotationOnBean(beanName, annotationType, allowFactoryBeanInit);
+	}
+
+	@Override
+	public <T> ObjectProvider<T> getBeanProvider(Class<T> requiredType) {
+		return parent.getBeanProvider(requiredType);
+	}
+
+	@Override
+	public <T> ObjectProvider<T> getBeanProvider(ResolvableType requiredType) {
+		return parent.getBeanProvider(requiredType);
+	}
+
+	@Override
+	public Class<?> getType(String name, boolean allowFactoryBeanInit) throws NoSuchBeanDefinitionException {
+		return parent.getType(name, allowFactoryBeanInit);
+	}
+	
     /* ********************* wired in setters ********************* */
 
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
+
+
+    
 }

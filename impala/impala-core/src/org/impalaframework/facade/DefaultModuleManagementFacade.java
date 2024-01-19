@@ -33,6 +33,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -239,5 +240,22 @@ public class DefaultModuleManagementFacade implements BeanFactory, ModuleManagem
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = ObjectUtils.cast(applicationContext, ConfigurableApplicationContext.class);
     }
+
+    /* *************** ApplicationContext method implementations version 5.3.0 ************* */
+
+	@Override
+	public <T> ObjectProvider<T> getBeanProvider(Class<T> requiredType) {
+		return this.applicationContext.getBeanProvider(requiredType);
+	}
+
+	@Override
+	public <T> ObjectProvider<T> getBeanProvider(ResolvableType requiredType) {
+		return this.applicationContext.getBeanProvider(requiredType);
+	}
+
+	@Override
+	public Class<?> getType(String name, boolean allowFactoryBeanInit) throws NoSuchBeanDefinitionException {
+		return this.applicationContext.getType(name, allowFactoryBeanInit);
+	}
 
 }
