@@ -1,6 +1,6 @@
 build from org.apache.ant:ant:1.7.1
 build from org.apache.ant:ant-launcher:1.7.0
-pgp from org.bouncycastle:bcprov-jdk15:1.45
-pgp from org.bouncycastle:bcpg-jdk15:1.45
+pgp from org.bouncycastle:bcprov-jdk18on:1.77
+pgp from org.bouncycastle:bcpg-jdk18on:1.77
 
-test from junit:junit:3.8.2
+test from junit:junit:4.13.2
