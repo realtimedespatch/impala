@@ -39,7 +39,8 @@ public class JspController implements ServletContextAware {
     
     private AutowiredClass autowiredClass;
     
-    private ServletContext servletContext;
+    @SuppressWarnings("unused")
+	private ServletContext servletContext;
     
     private HostBean hostBean;
 
