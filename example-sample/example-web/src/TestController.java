@@ -12,19 +12,23 @@
  * the License.
  */
 
-import interfaces.EntryService;
-
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 
 import classes.HostBean;
+import interfaces.EntryService;
 
-public class TestController extends MultiActionController {
+/**
+ * Moved to annotation based controller due to retirement of MultiActionController in Spring v 5
+ * This class has not been tested but intended as an example.
+ */
+@Controller
+public class TestController {
 
     private EntryService entryService;
 

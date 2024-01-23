@@ -12,21 +12,26 @@
  * the License.
  */
 
-import interfaces.EntryService;
-
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 
-import shared.ValueHolder;
 import classes.HostBean;
+import interfaces.EntryService;
+import shared.ValueHolder;
 
-public class TestController2 extends MultiActionController {
+/**
+ * Moved to annotation based controller due to retirement of MultiActionController in Spring v 5
+ * This class has not been tested but intended as an example.
+ */
+@Controller
+public class TestController2 {
 
     private EntryService entryService;
     
@@ -34,6 +39,7 @@ public class TestController2 extends MultiActionController {
     
     private HostBean hostBean;
 
+    @RequestMapping("/test")
     public ModelAndView test(HttpServletRequest request, HttpServletResponse response) {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("staticparam", "2222");

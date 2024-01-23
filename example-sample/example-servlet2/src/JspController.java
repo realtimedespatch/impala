@@ -12,29 +12,38 @@
  * the License.
  */
 
-import interfaces.EntryService;
-
 import java.util.HashMap;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 
-import shared.ValueHolder;
 import classes.HostBean;
+import interfaces.EntryService;
+import shared.ValueHolder;
 
-public class JspController extends MultiActionController implements ServletContextAware {
+/**
+ * Moved to annotation based controller due to retirement of MultiActionController in Spring v 5
+ * This class has not been tested but intended as an example.
+ */
+@Controller
+public class JspController implements ServletContextAware {
 
     private EntryService entryService;
     
     private AutowiredClass autowiredClass;
     
+    private ServletContext servletContext;
+    
     private HostBean hostBean;
 
+    @RequestMapping("/jsp")
     public ModelAndView jsp(HttpServletRequest request, HttpServletResponse response) {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("staticparam", "2222");
@@ -75,5 +84,11 @@ public class JspController extends MultiActionController implements ServletConte
     public void setHostBean(HostBean hostBean) {
         this.hostBean = hostBean;
     }
+
+	@Override
+	public void setServletContext(ServletContext servletContext) {
+		this.servletContext = servletContext;
+		
+	}
 
 }

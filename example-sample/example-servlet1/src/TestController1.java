@@ -22,15 +22,21 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.impalaframework.config.FloatPropertyValue;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 
 import classes.ConcreteService;
 import classes.MainModuleService;
 
 import shared.ValueHolder;
 
-public class TestController1 extends MultiActionController {
+/**
+ * Moved to annotation based controller due to retirement of MultiActionController in Spring v 5
+ * This class has not been tested but intended as an example.
+ */
+@Controller
+public class TestController1 {
 
     private ConcreteService concreteService;
     
@@ -42,6 +48,7 @@ public class TestController1 extends MultiActionController {
     
     private FloatPropertyValue magicNumber;
 
+    @RequestMapping("/test")
     public ModelAndView test(HttpServletRequest request, HttpServletResponse response) {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("staticparam", ""+magicNumber.getValue());
